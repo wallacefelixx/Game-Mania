@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Fale Conosco</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Fale Conosco</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <h2 class="section-title mb-5">Fale Conosco</h2>
+
+            <div class="row">
+                <div class="col-12 col-lg-7 mb-5 mb-lg-0">
+                    <h3 class="fw-bold mb-4 title-underline">Dúvidas Frequentes</h3>
+                    
+                    <div class="accordion custom-accordion" id="faqAccordion">
+                        
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <i class="bi bi-percent me-2"></i> Tem desconto à vista?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! Oferecemos <strong>10% de desconto</strong> para pagamentos via PIX ou Boleto Bancário. O desconto é aplicado automaticamente no carrinho na etapa de pagamento.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    <i class="bi bi-credit-card-2-front me-2"></i> Posso parcelar sem juros?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Com certeza. Você pode parcelar suas compras em até <strong>9x sem juros</strong> no cartão de crédito, ou até 12x com pequenos acréscimos dependendo da bandeira.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    <i class="bi bi-wallet2 me-2"></i> Quais formas de pagamento aceitam?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aceitamos Cartões de Crédito (Visa, Mastercard, Elo, Amex), Boleto Bancário (aprovação em até 2 dias úteis) e PIX (aprovação imediata).
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    <i class="bi bi-tools me-2"></i> A loja oferece suporte técnico?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, temos uma equipe especializada para ajudar na instalação ou configuração de produtos comprados conosco. Basta entrar em contato pelo WhatsApp.
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    <i class="bi bi-clock-history me-2"></i> Quais são os horários de atendimento?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Nosso atendimento funciona de Segunda a Sexta, das 08h às 18h, e aos Sábados das 09h às 13h.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                    <i class="bi bi-whatsapp me-2"></i> Existe atendimento pelo WhatsApp?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! Você pode clicar nos números listados ao lado ou no rodapé para falar diretamente conosco pelo WhatsApp.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    
+                    <div class="text-center mb-5 d-none d-lg-block">
+                        <img src="https://placehold.co/400x300/f8f9fa/050a30?text=Atendimento+Game+Mania" class="img-fluid rounded shadow-sm border" alt="Atendimento">
+                    </div>
+
+                    <div class="bg-light p-4 rounded border">
+                        <div class="mb-4">
+                            <h4 class="fw-bold mb-3" style="color: var(--dark-blue);">Redes Sociais</h4>
+                            <ul class="list-unstyled fw-bold text-secondary">
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-instagram fs-4 contact-icon me-3"></i> @gamemania.oficial
+                                </li>
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-youtube fs-4 contact-icon me-3"></i> youtube.com/@GameManiaTV
+                                </li>
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-facebook fs-4 contact-icon me-3"></i> facebook.com/gamemaniabr
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-4">
+                            <h4 class="fw-bold mb-3" style="color: var(--dark-blue);">Suporte Direto</h4>
+                            <p class="small text-muted mb-3">Clique para chamar no WhatsApp</p>
+                            <ul class="list-unstyled fw-bold text-secondary">
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-whatsapp fs-4 contact-icon me-3"></i> (37) 96669-6669
+                                </li>
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-telephone-fill fs-4 contact-icon me-3"></i> (37) 3222-0000
+                                </li>
+                                <li class="mb-2 contact-item d-flex align-items-center cursor-pointer">
+                                    <i class="bi bi-envelope-at-fill fs-4 contact-icon me-3"></i> sac@gamemania.com
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Armazenamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item"><a href="pc.html" class="text-decoration-none text-muted">Hardware</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Armazenamento</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-container mt-3">
+                        <button class="btn btn-filter" onclick="filtrarProdutos('sata', this)">SSD SATA</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('nvme', this)">SSD NVME M.2</button>
+                        <button class="btn btn-filter active" onclick="filtrarProdutos('todos', this)">VER TODOS</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 pt-3" id="grade-produtos"> 
+                
+                <!-- 1. SATA (480GB) -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="sata">
+                    <div class="product-card card h-100">
+                        <a href="ssd_sata_480gb.html" class="product-link">
+                            <img src="https://images8.kabum.com.br/produtos/fotos/85198/ssd-kingston-a400-480gb-sata-leitura-500mb-s-gravacao-450mb-s-sa400s37-480g_1629133546_gg.jpg" class="product-img" alt="SSD SATA 480GB">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ssd_sata_480gb.html" class="product-link">
+                                <h5 class="product-name">SSD Kingston A400 480GB SATA</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 250,00</span>
+                                <span class="product-price-new">R$ 199,00</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">2x</span> de <span class="installment-highlight">R$ 99,50</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. SATA (1TB) -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="sata">
+                    <div class="product-card card h-100">
+                        <a href="ssd_sata_1tb.html" class="product-link">
+                            <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/s/d/sdssda-1t00-g27.jpg" class="product-img" alt="SSD SATA 1TB">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ssd_sata_1tb.html" class="product-link">
+                                <h5 class="product-name">SSD SanDisk Plus 1TB SATA</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 600,00</span>
+                                <span class="product-price-new">R$ 550,00</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 110,00</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. NVME (1TB) -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="nvme">
+                    <div class="product-card card h-100">
+                        <a href="ssd_nvme_1tb.html" class="product-link">
+                            <img src="https://images2.kabum.com.br/produtos/fotos/sync_mirakl/400812/xlarge/SSD-1TB-Kingston-Nv2-M-2-2280-PCIe-NVMe-Leitura-3500MB-s-Grava-o-2100MB-s-Snv2s-1000g_1763138630.jpg" class="product-img" alt="SSD NVMe 1TB">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ssd_nvme_1tb.html" class="product-link">
+                                <h5 class="product-name">SSD Kingston NV2 1TB NVMe M.2</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 450,00</span>
+                                <span class="product-price-new">R$ 380,00</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">4x</span> de <span class="installment-highlight">R$ 95,00</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

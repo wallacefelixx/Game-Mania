@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda - Game Mania</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Central de Ajuda</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5 text-center">
+            
+            <h1 class="fw-bold mb-3" style="color: var(--dark-blue);">Como podemos ajudar?</h1>
+            
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 col-lg-6">
+                    <div class="input-group input-group-lg border rounded overflow-hidden">
+                        <span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-0 shadow-none" placeholder="Digite sua dúvida (ex: prazo de entrega)">
+                        <button class="btn btn-dark" style="background-color: var(--dark-blue);">BUSCAR</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 text-start">
+                
+                <div class="col-md-6 col-lg-4">
+                    <a href="prazos.html" class="text-decoration-none">
+                        <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-box-seam fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Pedidos e Entrega</h5>
+                            <p class="text-muted small mb-0">Rastreamento, prazos, frete e atrasos na entrega.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="trocas.html" class="text-decoration-none">
+                        <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-arrow-repeat fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Trocas e Devoluções</h5>
+                            <p class="text-muted small mb-0">Como devolver, prazos de garantia e produtos com defeito.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="pagamento.html" class="text-decoration-none">
+                        <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-credit-card fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Pagamentos</h5>
+                            <p class="text-muted small mb-0">Formas de pagamento, 2ª via de boleto e estornos.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="segurança.html" class="text-decoration-none">
+                        <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-shield-check fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Segurança</h5>
+                            <p class="text-muted small mb-0">Política de privacidade, LGPD e dados cadastrais.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="login.html" class="text-decoration-none"> <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-person-gear fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Minha Conta</h5>
+                            <p class="text-muted small mb-0">Alterar senha, endereços e dados de login.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="faleconosco.html" class="text-decoration-none">
+                        <div class="p-4 border rounded h-100 hover-shadow transition">
+                            <i class="bi bi-headset fs-2 mb-3 d-block" style="color: var(--neon-green);"></i>
+                            <h5 class="fw-bold text-dark">Fale Conosco</h5>
+                            <p class="text-muted small mb-0">Não achou o que procurava? Entre em contato com nosso time.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
