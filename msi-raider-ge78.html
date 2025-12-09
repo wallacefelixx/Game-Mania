@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - MSI Raider GE78 HX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item"><a href="notebooks.html" class="text-decoration-none text-muted">Computadores</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">MSI Raider GE78 HX</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <div class="row product-card pt-3">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <div id="productCarouselMSI" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                         <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#productCarouselMSI" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#productCarouselMSI" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner rounded shadow-sm">
+                            <div class="carousel-item active">
+                                <img src="https://m.media-amazon.com/images/I/71IZpN3-2BL._AC_SX679_.jpg" class="d-block w-100 product-detail-img" alt="MSI Frente">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://m.media-amazon.com/images/I/61U1PFHUTRL._AC_SX679_.jpg" class="d-block w-100 product-detail-img" alt="MSI Traseira">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarouselMSI" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarouselMSI" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <h1 class="product-name fw-bold mb-2" style="color: #333;">Notebook Gamer MSI Raider GE78 HX i9-13980HX RTX 4080 64GB</h1>
+                    <p class="text-muted mb-3">Marca: <strong class="text-dark">MSI</strong> | Modelo: <strong class="text-dark">GE78HX 13VH</strong></p>
+                    <div class="rating mb-3 text-warning">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <span class="text-muted ms-2 small">(2 avaliações)</span>
+                    </div>
+                    <hr>
+                    <div class="price-area my-4">
+                        <span class="d-block text-decoration-line-through text-muted mb-1 product-price-old">R$ 29.999,00</span>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="product-price-new fw-bold display-6" style="color: var(--neon-green); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">R$ 25.999,00</span>
+                            <span class="badge bg-success">-13% OFF</span>
+                        </div>
+                        <p class="product-installments mt-2">
+                            <span class="installment-highlight fs-5">10x</span> de <span class="installment-highlight fs-5">R$ 2.599,90</span> <span class="installment-light">sem juros no cartão</span>
+                        </p>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-comprar btn-lg py-3" onclick="adicionarAoCarrinho(this)">
+                            <i class="bi bi-cart-plus me-2"></i> ADICIONAR AO CARRINHO
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-truck text-success fs-4"></i><span class="fw-bold">Frete Grátis</span><span class="text-muted small">Seguro incluso</span></div>
+                        <div class="d-flex align-items-center gap-2"><i class="bi bi-shield-check text-success fs-4"></i><span class="fw-bold">Garantia Global</span><span class="text-muted small">2 anos MSI</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item"><button class="nav-link active fw-bold text-dark" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc">Descrição</button></li>
+                        <li class="nav-item"><button class="nav-link fw-bold text-dark" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs">Especificações</button></li>
+                        <li class="nav-item"><button class="nav-link fw-bold text-dark" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews">Avaliações (2)</button></li>
+                    </ul>
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom bg-light" id="myTabContent">
+                        <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                            <p><strong>Ilumine as Possibilidades</strong></p>
+                            <p>O Raider GE78 HX torna o impossível possível. Com a icônica barra de luz Matrix RGB, processador i9 HX e gráficos RTX 4080, este notebook não é apenas uma ferramenta de jogo, é o centro do seu setup.</p>
+                        </div>
+                        <div class="tab-pane fade" id="specs" role="tabpanel">
+                             <table class="table table-striped">
+                                <tbody>
+                                    <tr><th scope="row">Processador</th><td>Intel Core i9-13980HX</td></tr>
+                                    <tr><th scope="row">Placa de Vídeo</th><td>RTX 4080 12GB GDDR6</td></tr>
+                                    <tr><th scope="row">Memória RAM</th><td>64GB DDR5 5600MHz</td></tr>
+                                    <tr><th scope="row">Armazenamento</th><td>2TB SSD NVMe Gen4</td></tr>
+                                    <tr><th scope="row">Tela</th><td>17" QHD+ 240Hz</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                             <div class="review-item"><h6 class="fw-bold">Tech Enthusiast</h6><p class="text-muted">Desempenho de desktop em um formato portátil. Caro, mas vale.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="related-products-title mb-4">Compre Junto</h3>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="intel3.html" class="product-link">
+                            <img src="https://images9.kabum.com.br/produtos/fotos/283719/processador-intel-core-i3-12100f-cache-xmb-xghz-xghz-max-turbo-lga-1700-bx8071512100f_1640095096_gg.jpg" class="product-img" alt="Mouse ROG">
+                        </a>
+                        <a href="intel3.html" class="product-link">
+                            <h6 class="mb-0 product-name">Intel Core i3-12100F</h6>
+                        </a>
+                        <small class="product-price-new fs-6">R$ 599,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="intel4.html" class="product-link">
+                            <img src="https://images4.kabum.com.br/produtos/fotos/sync_mirakl/506014/xlarge/Processador-Intel-Core-I9-14900k-14-Gera-o-3-6-GHZ-6-0-GHZ-Turbo-Cache-36MB-Intel-LGA1700-BX8071514900K_1756393789.jpg" class="product-img" alt="Headset Delta">
+                        </a>
+                        <a href="intel4.html" class="product-link">
+                            <h6 class="mb-0 product-name">Intel Core i9-14900K</h6>
+                        </a>
+                        <small class="product-price-new fs-6">R$ 3.999,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

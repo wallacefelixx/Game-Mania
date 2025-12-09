@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Processadores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item"><a href="pc.html" class="text-decoration-none text-muted">Hardware</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Processadores</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-container mt-3">
+                        <button class="btn btn-filter" onclick="filtrarProdutos('amd', this)">AMD RYZEN</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('intel', this)">INTEL CORE</button>
+                        <button class="btn btn-filter active" onclick="filtrarProdutos('todos', this)">VER TODOS</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 pt-3" id="grade-produtos"> 
+                
+                <!-- 1. AMD RYZEN 5 5600 -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="amd">
+                    <div class="product-card card h-100">
+                        <a href="ryzen2.html" class="product-link"><img src="https://images8.kabum.com.br/produtos/fotos/320798/processador-amd-ryzen-5-5600-cache-35mb-3-7ghz-4-4ghz-max-turbo-am4-100-100000927box_1647636743_gg.jpg" class="product-img" alt="Ryzen 5"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen2.html" class="product-link"><h5 class="product-name">Processador AMD Ryzen 5 5600</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 900,00</span><span class="product-price-new">R$ 829,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">8x</span> de <span class="installment-highlight">R$ 103,73</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. INTEL i5-12400F -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="intel">
+                    <div class="product-card card h-100">
+                        <a href="intel1.html" class="product-link"><img src="https://images8.kabum.com.br/produtos/fotos/283718/processador-intel-core-i5-12400f-cache-xmb-xghz-xghz-max-turbo-lga-1700-bx8071512400f_1640094446_gg.jpg" class="product-img" alt="Core i5"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="intel1.html" class="product-link"><h5 class="product-name">Processador Intel Core i5-12400F</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 1.100,00</span><span class="product-price-new">R$ 950,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">9x</span> de <span class="installment-highlight">R$ 105,55</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. AMD RYZEN 7 5700X -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="amd">
+                    <div class="product-card card h-100">
+                        <a href="ryzen3.html" class="product-link"><img src="https://images7.kabum.com.br/produtos/fotos/320797/processador-amd-ryzen-7-5700x-cache-36mb-3-8ghz-4-6ghz-max-turbo-am4-100-100000926wof_1647636511_gg.jpg" class="product-img" alt="Ryzen 7"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen3.html" class="product-link"><h5 class="product-name">Processador AMD Ryzen 7 5700X</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 1.300,00</span><span class="product-price-new">R$ 1.150,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 115,00</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. INTEL i7-13700K -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="intel">
+                    <div class="product-card card h-100">
+                        <a href="intel2.html" class="product-link"><img src="https://images3.kabum.com.br/produtos/fotos/386973/processador-intel-core-i7-13700k-5-4ghz-max-turbo-cache-30mb-16-nucleos-24-threads-lga-1700-video-integrado-bx8071513700k_1664287643_gg.jpg" class="product-img" alt="Core i7"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="intel2.html" class="product-link"><h5 class="product-name">Processador Intel Core i7-13700K</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 2.800,00</span><span class="product-price-new">R$ 2.499,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 249,90</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. AMD RYZEN 9 7950X -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="amd">
+                    <div class="product-card card h-100">
+                        <a href="ryzen4.html" class="product-link"><img src="https://images1.kabum.com.br/produtos/fotos/378411/processador-amd-ryzen-9-7950x-5-7ghz-max-turbo-cache-80mb-am5-16-nucleos-video-integrado-100-100000514wof_1662132759_gg.jpg" class="product-img" alt="Ryzen 9"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen4.html" class="product-link"><h5 class="product-name">Processador AMD Ryzen 9 7950X</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 3.500,00</span><span class="product-price-new">R$ 3.199,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">12x</span> de <span class="installment-highlight">R$ 266,58</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. INTEL i3-12100F -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="intel">
+                    <div class="product-card card h-100">
+                        <a href="intel3.html" class="product-link"><img src="https://images9.kabum.com.br/produtos/fotos/283719/processador-intel-core-i3-12100f-cache-xmb-xghz-xghz-max-turbo-lga-1700-bx8071512100f_1640095096_gg.jpg" class="product-img" alt="Core i3"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="intel3.html" class="product-link"><h5 class="product-name">Processador Intel Core i3-12100F</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 700,00</span><span class="product-price-new">R$ 599,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">6x</span> de <span class="installment-highlight">R$ 99,98</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. AMD RYZEN 5 4600G -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="amd">
+                    <div class="product-card card h-100">
+                        <a href="ryzen5.html" class="product-link"><img src="https://images5.kabum.com.br/produtos/fotos/333145/processador-amd-ryzen-5-4600g-cache-11mb-3-7ghz-4-2ghz-max-turbo-am4-video-integrado-100-100000147box_1653338731_gg.jpg" class="product-img" alt="Ryzen 5G"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen5.html" class="product-link"><h5 class="product-name">Processador AMD Ryzen 5 4600G</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 650,00</span><span class="product-price-new">R$ 580,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 116,00</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. INTEL i9-14900K -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="intel">
+                    <div class="product-card card h-100">
+                        <a href="intel4.html" class="product-link"><img src="https://images4.kabum.com.br/produtos/fotos/sync_mirakl/506014/xlarge/Processador-Intel-Core-I9-14900k-14-Gera-o-3-6-GHZ-6-0-GHZ-Turbo-Cache-36MB-Intel-LGA1700-BX8071514900K_1756393789.jpg" class="product-img" alt="Core i9"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="intel4.html" class="product-link"><h5 class="product-name">Processador Intel Core i9-14900K</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 4.500,00</span><span class="product-price-new">R$ 3.999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">12x</span> de <span class="installment-highlight">R$ 333,25</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 9. AMD RYZEN 3 3200G -->
+                 <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="amd">
+                    <div class="product-card card h-100">
+                        <a href="ryzen1.html" class="product-link"><img src="https://images8.kabum.com.br/produtos/fotos/102248/processador-amd-ryzen-3-3200g-cache-4mb-3-6ghz-4ghz-max-turbo-am4-yd3200c5fhbox_1607691191_gg.jpg" class="product-img" alt="Ryzen 3"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen1.html" class="product-link"><h5 class="product-name">Processador AMD Ryzen 3 3200G</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 399,99</span><span class="product-price-new">R$ 349,99</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 34,99</span> <span class="installment-light">sem juros</span></p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function filtrarProdutos(categoria, botaoClicado) {
+            const produtos = document.querySelectorAll('.product-col');
+            const botoes = document.querySelectorAll('.btn-filter');
+            botoes.forEach(btn => btn.classList.remove('active'));
+            if(botaoClicado) botaoClicado.classList.add('active');
+            produtos.forEach(produto => {
+                const cat = produto.getAttribute('data-categoria');
+                if (categoria === 'todos') produto.classList.remove('d-none-filter');
+                else if (cat === categoria) produto.classList.remove('d-none-filter');
+                else produto.classList.add('d-none-filter');
+            });
+        }
+    </script>
+</body>
+</html>

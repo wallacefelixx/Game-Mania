@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Periféricos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container do Carrinho -->
+    <div id="cart-sidebar-container"></div>
+
+    <!-- Header carregado via JS -->
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <!-- Carrossel -->
+        <div id="carouselGameMania" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselGameMania" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselGameMania" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselGameMania" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img src="https://themes.kabum.com.br/conteudo/layout/7347/1764578797.jpg" class="d-block w-100 carousel-img"></div>
+                <div class="carousel-item"><a href="mouse_logitech_gpro.html"><img src="https://themes.kabum.com.br/conteudo/layout/7365/1764791928.jpg" class="d-block w-100 carousel-img"></div></a>
+                <div class="carousel-item"><img src="https://d388c9e5236gcl.cloudfront.net/producao/602968/cod_black_ops_7_final.png?ic=1" class="d-block w-100 carousel-img"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGameMania" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGameMania" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+        </div>
+
+        <hr>
+
+        <!-- BANNER PERIFÉRICOS -->
+        <div class="container-fluid p-0 mb-4">
+            <div class="banner-perifericos shadow"> 
+                <div class="container d-flex align-items-center h-100">
+                    <div class="banner-img-container">
+                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1764183569/perifericos_fmph0x.jpg" alt="Periféricos" class="banner-img">
+                    </div> 
+                    <div class="flex-grow-1 ps-4 text-white">
+                        <h2 class="m-0 banner-title">Periféricos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÁREA CENTRAL BRANCA -->
+        <div class="container main-content-white mb-5">
+            
+            <!-- SEÇÃO DE FILTROS (Atualizada para todas as categorias criadas) -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-container mt-3">
+                        <button class="btn btn-filter" onclick="filtrarProdutos('teclado', this)">TECLADOS</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('mouse', this)">MOUSES</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('microfone', this)">MICROFONES</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('webcam', this)">WEBCAMS</button>
+                        <button class="btn btn-filter" onclick="filtrarProdutos('suporte', this)">SUPORTES</button>
+                        <button class="btn btn-filter active" onclick="filtrarProdutos('todos', this)">VER TODOS</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GRID DE PRODUTOS (21 Itens Criados) -->
+            <div class="row g-4 pt-3" id="grade-produtos"> 
+                
+                <!-- === TECLADOS (3) === -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="teclado">
+                    <div class="product-card card h-100">
+                        <a href="teclado_hyperx_alloy.html" class="product-link"><img src="https://images5.kabum.com.br/produtos/fotos/92065/92065_1521476737_index_gg.jpg" class="product-img" alt="Alloy FPS"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="teclado_hyperx_alloy.html" class="product-link"><h5 class="product-name">Teclado Mecânico HyperX Alloy FPS</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 600,00</span><span class="product-price-new">R$ 499,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">5x</span> de R$ 99,98 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="teclado">
+                    <div class="product-card card h-100">
+                        <a href="teclado_razer_cynosa.html" class="product-link"><img src="https://images9.kabum.com.br/produtos/fotos/sync_mirakl/169889/xlarge/Teclado-Gamer-Razer-Cynosa-V2-Chroma-RGB-Preto-Switch-Membrane-US_1758714886.png" class="product-img" alt="Cynosa"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="teclado_razer_cynosa.html" class="product-link"><h5 class="product-name">Teclado Razer Cynosa V2 Chroma</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 400,00</span><span class="product-price-new">R$ 320,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">3x</span> de R$ 106,66 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="teclado">
+                    <div class="product-card card h-100">
+                        <a href="teclado_redragon_kumara.html" class="product-link"><img src="https://images1.kabum.com.br/produtos/fotos/89171/89171_2_1523620293_gg.jpg" class="product-img" alt="Kumara"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="teclado_redragon_kumara.html" class="product-link"><h5 class="product-name">Teclado Mecânico Redragon Kumara TKL</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 250,00</span><span class="product-price-new">R$ 199,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">2x</span> de R$ 99,95 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === MOUSES (3) === -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="mouse">
+                    <div class="product-card card h-100">
+                        <a href="mouse_logitech_gpro.html" class="product-link"><img src="https://images9.kabum.com.br/produtos/fotos/149989/mouse-sem-fio-gamer-logitech-g-pro-x-superlight-lightspeed-25000-dpi-5-botoes-preto-910-005879_1727272012_gg.jpg" class="product-img" alt="G Pro"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="mouse_logitech_gpro.html" class="product-link"><h5 class="product-name">Mouse Logitech G Pro X Superlight</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 900,00</span><span class="product-price-new">R$ 799,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">8x</span> de R$ 99,87 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="mouse">
+                    <div class="product-card card h-100">
+                        <a href="mouse_redragon_cobra.html" class="product-link"><img src="https://images5.kabum.com.br/produtos/fotos/94555/mouse-gamer-redragon-cobra-chroma-rgb-10000dpi-7-botoes-preto-m711-v2_1742821619_gg.jpg" class="product-img" alt="Cobra"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="mouse_redragon_cobra.html" class="product-link"><h5 class="product-name">Mouse Redragon Cobra Chroma</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 150,00</span><span class="product-price-new">R$ 119,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">1x</span> de R$ 119,90 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="mouse">
+                    <div class="product-card card h-100">
+                        <a href="mouse_razer_deathadder.html" class="product-link"><img src="https://images1.kabum.com.br/produtos/fotos/sync_mirakl/633611/xlarge/Mouse-Gamer-Razer-Deathadder-V3-Pro-30000-DPI-5-Bot-es-63g-Ultraleve-90hr-De-Bateria-Recarreg-vel-Preto_1740453039.jpg" class="product-img" alt="Deathadder"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="mouse_razer_deathadder.html" class="product-link"><h5 class="product-name">Mouse Razer Deathadder V3 Pro</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 1.200,00</span><span class="product-price-new">R$ 999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 99,90 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === MICROFONES (9) === -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="microfone">
+                    <div class="product-card card h-100"><a href="mic_hyperx_quadcast.html" class="product-link"><img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/h/m/hmiq1s-xx-rg-g6.jpg" class="product-img"></a><div class="card-body d-flex flex-column text-center p-0"><a href="mic_hyperx_quadcast.html" class="product-link"><h5 class="product-name">Microfone HyperX QuadCast S RGB</h5></a><div class="price-container"><span class="product-price-new">R$ 999,90</span></div><button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button></div></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="microfone">
+    <div class="product-card card h-100">
+        <a href="mic_shure_sm7b.html" class="product-link">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_695592-MLU75357526351_032024-F.webp" class="product-img" alt="Microfone Shure SM7B">
+        </a>
+        <div class="card-body d-flex flex-column text-center p-0">
+            <a href="mic_shure_sm7b.html" class="product-link">
+                <h5 class="product-name">Microfone Shure SM7B</h5>
+            </a>
+            <div class="price-container">
+                <span class="product-price-new">R$ 2.999,00</span>
+            </div>
+            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+</div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="microfone">
+                    <div class="product-card card h-100"><a href="mic_fifine_a8.html" class="product-link"><img src="https://img.terabyteshop.com.br/produto/g/microfone-gamer-fifine-ampligame-a8-plus-rgb-usb-black_203041.jpg" class="product-img"></a><div class="card-body d-flex flex-column text-center p-0"><a href="mic_fifine_a8.html" class="product-link"><h5 class="product-name">Microfone Fifine Ampligame A8</h5></a><div class="price-container"><span class="product-price-new">R$ 349,00</span></div><button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button></div></div>
+                </div>
+
+                <!-- === WEBCAMS (3) === -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="webcam">
+                    <div class="product-card card h-100">
+                        <a href="webcam_logitech_c920.html" class="product-link"><img src="https://images1.kabum.com.br/produtos/fotos/103431/webcam-logitech-c920s-pro-full-hd-1080p-30-fps-audio-estereo-com-microfones-960-001257_1613999712_gg.jpg" class="product-img" alt="C920"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="webcam_logitech_c920.html" class="product-link"><h5 class="product-name">Webcam Logitech C920s Pro</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 450,00</span><span class="product-price-new">R$ 359,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">4x</span> de R$ 89,97 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="webcam">
+                    <div class="product-card card h-100">
+                        <a href="webcam_logitech_brio.html" class="product-link"><img src="https://images5.kabum.com.br/produtos/fotos/496105/webcam-logitech-brio-100-full-hd-30-fps-microfone-usb-c-correcao-automatica-branco-960-001615_1702037661_gg.jpg" class="product-img" alt="Brio 4K"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="webcam_logitech_brio.html" class="product-link"><h5 class="product-name">Webcam Logitech Brio 4K</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 1.200,00</span><span class="product-price-new">R$ 999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 99,90 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="webcam">
+                    <div class="product-card card h-100">
+                        <a href="webcam_redragon_fobos.html" class="product-link"><img src="https://images4.kabum.com.br/produtos/fotos/252274/webcam-gamer-e-streamer-redragon-fobos-720p-30-fps-2-microfones-integrados-preto-gw600-1_1634743887_gg.jpg" class="product-img" alt="Fobos"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="webcam_redragon_fobos.html" class="product-link"><h5 class="product-name">Webcam Redragon Fobos GW600</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 200,00</span><span class="product-price-new">R$ 149,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">2x</span> de R$ 74,95 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === SUPORTES (3) === -->
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="suporte">
+                    <div class="product-card card h-100">
+                        <a href="suporte_elg_f80n.html" class="product-link"><img src="https://images3.kabum.com.br/produtos/fotos/107363/suporte-de-mesa-articulado-para-monitores-de-17-a-35-elg-ajuste-de-altura-com-pistao-a-gas-f80n_1749123835_gg.jpg" class="product-img" alt="ELG F80N"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="suporte_elg_f80n.html" class="product-link"><h5 class="product-name">Suporte Articulado ELG F80N</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 250,00</span><span class="product-price-new">R$ 199,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">2x</span> de R$ 99,95 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="suporte">
+                    <div class="product-card card h-100">
+                        <a href="suporte_gpu_rise.html" class="product-link"><img src="https://images3.kabum.com.br/produtos/fotos/507103/suporte-de-placa-de-video-rise-mode-argb-500mm-aura-v1-branco-rm-spvg-01-argb-w_1724772049_gg.jpg" class="product-img" alt="Suporte GPU"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="suporte_gpu_rise.html" class="product-link"><h5 class="product-name">Suporte VGA Rise Mode ARGB</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 80,00</span><span class="product-price-new">R$ 59,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">1x</span> de R$ 59,90 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 product-col" data-categoria="suporte">
+                    <div class="product-card card h-100">
+                        <a href="suporte_headset_redragon.html" class="product-link"><img src="https://cdn.dooca.store/151246/products/c5worbuhlfcras6tp4tstpkciimeqreykm2p_1600x1600+fill_ffffff.jpg?v=1724023406" class="product-img" alt="Scepter"></a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="suporte_headset_redragon.html" class="product-link"><h5 class="product-name">Suporte Headset Redragon Scepter Pro</h5></a>
+                            <div class="price-container"><span class="product-price-old">R$ 150,00</span><span class="product-price-new">R$ 119,90</span></div>
+                            <p class="product-installments"><span class="installment-highlight">1x</span> de R$ 119,90 sem juros</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="related-products-title mb-4">Lançamentos</h3>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="teclado_razer_cynosa.html" class="product-link">
+                <img src="https://images9.kabum.com.br/produtos/fotos/sync_mirakl/169889/xlarge/Teclado-Gamer-Razer-Cynosa-V2-Chroma-RGB-Preto-Switch-Membrane-US_1758714885.png" class="product-img" alt="Teclado Razer">
+            </a>
+            <a href="teclado_razer_cynosa.html" class="product-link">
+                <h6 class="mb-0 product-name">Teclado Gamer Razer Cynosa</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 320,00</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="ryzen3.html" class="product-link">
+                <img src="https://images7.kabum.com.br/produtos/fotos/320797/processador-amd-ryzen-7-5700x-cache-36mb-3-8ghz-4-6ghz-max-turbo-am4-100-100000926wof_1647636511_gg.jpg" class="product-img" alt="Ryzen 7">
+            </a>
+            <a href="ryzen3.html" class="product-link">
+                <h6 class="mb-0 product-name">AMD Ryzen 7 5700X</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 1.150,00</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="placa_intel_z590.html" class="product-link">
+                <img src="https://m.media-amazon.com/images/I/819rfKwFnfL._AC_SX466_.jpg" class="product-img" alt="Teclado FPS">
+            </a>
+            <a href="placa_intel_z590.html" class="product-link">
+                <h6 class="mb-0 product-name">Placa Mãe Gigabyte Z590</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 1.499,90</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="webcam_redragon_fobos.html" class="product-link">
+                <img src="https://images4.kabum.com.br/produtos/fotos/252274/webcam-gamer-e-streamer-redragon-fobos-720p-30-fps-2-microfones-integrados-preto-gw600-1_1634743887_gg.jpg" class="product-img" alt="Webcam Fobos">
+            </a>
+            <a href="webcam_redragon_fobos.html" class="product-link">
+                <h6 class="mb-0 product-name">Webcam Redragon Fobos</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 149,90</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+</div>
+
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

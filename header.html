@@ -1,0 +1,195 @@
+<div class="top-bar d-flex justify-content-center align-items-center">
+    <span class="fw-bold text-uppercase">
+        Aceitamos Pix <i class="bi bi-x-diamond-fill ms-1"></i>
+    </span>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark pt-3 pb-2">
+    <div class="container">
+        
+        <a class="navbar-brand me-4 logo-hover" href="index.html">
+            <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1764183572/LOGO_l1seqn.png" alt="Logo Game Mania" class="logo-img">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            
+            <form class="d-flex mx-auto search-container my-3 my-lg-0">
+                <input class="form-control search-input" type="search" placeholder="Precisa de alguma coisa?" aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            <div class="header-icons d-flex align-items-center justify-content-center gap-4 mb-3 mb-lg-0">
+                <a href="faleconosco.html" title="Atendimento"><i class="bi bi-chat-text"></i></a>
+                <a href="#" title="Rastreio"><i class="bi bi-truck"></i></a>
+                <a href="login.html" title="Minha Conta"><i class="bi bi-person-fill"></i></a>
+                
+                <a href="checkout.html" title="Carrinho" onclick="abrirCarrinho(event)">
+                    <i class="bi bi-cart-fill"></i>
+                </a>
+            </div>
+
+            <ul class="navbar-nav d-lg-none border-top border-secondary mt-3 pt-3 text-center">
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">JOGOS</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">CONSOLES</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">PC</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">DIVERSOS</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">NOTEBOOK</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="category-bar d-none d-lg-block bg-custom-dark border-top border-secondary position-relative">
+    <div class="container d-flex justify-content-center">
+        
+        <div class="nav-item-custom">
+            <a href="#" class="cat-link">JOGOS</a>
+            <div class="mega-menu">
+                <div class="row">
+                    <div class="col-4">
+                        <h6 class="mega-title text-neon-green">Playstation</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Jogos PS5</a></li>
+                            <li><a href="#">Jogos PS4</a></li>
+                            <li><a href="#">Pré-vendas</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="mega-title text-neon-green">Xbox</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Xbox Series X/S</a></li>
+                            <li><a href="#">Xbox One</a></li>
+                            <li><a href="#">Game Pass</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h6 class="mega-title text-neon-green">Nintendo</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Jogos Switch</a></li>
+                            <li><a href="#">Amiibos</a></li>
+                            <li><a href="#">Digitais</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item-custom">
+            <a href="#" class="cat-link">CONSOLES</a>
+            <div class="mega-menu">
+                <div class="row">
+                    <div class="col-6">
+                        <h6 class="mega-title text-neon-green">Nova Geração</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Playstation 5</a></li>
+                            <li><a href="#">Xbox Series X</a></li>
+                            <li><a href="#">Nintendo Switch OLED</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="mega-title text-neon-green">Retrô & Portáteis</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Playstation 4</a></li>
+                            <li><a href="#">Nintendo Switch Lite</a></li>
+                            <li><a href="#">Controles & Acessórios</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item-custom">
+            <a href="pc.html" class="cat-link">PC</a>
+            <div class="mega-menu" style="min-width: 500px; left: -100px;">
+                <div class="row">
+                    <div class="col-6">
+                        <h6 class="mega-title text-neon-green">Hardware</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="processadores.html">Processadores</a></li>
+                            <li><a href="placas_video.html">Placas de Vídeo</a></li>
+                            <li><a href="placas.html">Placas Mãe</a></li>
+                            <li><a href="armazenamento.html">HD e SSD</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="mega-title text-neon-green">Periféricos</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="teclados.html">Teclados</a></li>
+                            <li><a href="mouses.html">Mouses</a></li>
+                            <li><a href="headsets.html">Headsets</a></li>
+                            <li><a href="webcams.html">Webcams</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item-custom">
+            <a href="#" class="cat-link">DIVERSOS</a>
+            <div class="mega-menu" style="min-width: 250px; left: 0;">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="mega-title text-neon-green">Geek & Colecionáveis</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Funko Pop</a></li>
+                            <li><a href="#">Action Figures</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item-custom">
+            <a href="#" class="cat-link">NOTEBOOK</a>
+            <div class="mega-menu" style="min-width: 250px; left: -50px;">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="mega-title text-neon-green">Portáteis</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Notebook Gamer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="ae-banner">
+    <div class="container">
+        <div class="banner-content">
+            
+            <div class="ae-item">
+                <i class="fa-solid fa-truck-fast ae-icon"></i>
+                <div class="ae-text">
+                    <span class="ae-title">Frete Grátis</span>
+                    <span class="ae-subtitle">sul e sudeste*</span>
+                </div>
+            </div>
+
+            <div class="ae-item">
+                <i class="fa-brands fa-pix ae-icon"></i>
+                <div class="ae-text">
+                    <span class="ae-title">10% de Desconto</span>
+                    <span class="ae-subtitle">pix / boleto / depósito</span>
+                </div>
+            </div>
+
+            <div class="ae-item">
+                <i class="fa-regular fa-credit-card ae-icon"></i>
+                <div class="ae-text">
+                    <span class="ae-title">9x Sem Juros</span>
+                    <span class="ae-subtitle">cartão de crédito / paypal</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

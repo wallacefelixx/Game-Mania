@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Radeon RX 6600</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+    <main class="mb-5">
+        <div class="container mt-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li><li class="breadcrumb-item"><a href="pc.html" class="text-decoration-none text-muted">Hardware</a></li><li class="breadcrumb-item"><a href="placas_video.html" class="text-decoration-none text-muted">Placas de Vídeo</a></li><li class="breadcrumb-item active text-white" aria-current="page">Radeon RX 6600</li></ol></nav></div>
+        <div class="container main-content-white mb-5">
+            <div class="row product-card pt-3">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <div id="productCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                        <div class="carousel-indicators"><button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button><button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button><button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button></div>
+                        <div class="carousel-inner rounded shadow-sm">
+                            <div class="carousel-item active"><img src="https://images4.kabum.com.br/produtos/fotos/235984/placa-de-video-asrock-amd-radeon-rx-6600-cld-8g-8gb-90-ga2rzz-00uanf_1634738812_gg.jpg" class="d-block w-100 product-detail-img"></div>
+                            <div class="carousel-item"><img src="https://images4.kabum.com.br/produtos/fotos/235984/placa-de-video-asrock-amd-radeon-rx-6600-cld-8g-8gb-90-ga2rzz-00uanf_1634738810_gg.jpg" class="d-block w-100 product-detail-img"></div>
+                            <div class="carousel-item"><img src="https://images4.kabum.com.br/produtos/fotos/235984/placa-de-video-asrock-amd-radeon-rx-6600-cld-8g-8gb-90-ga2rzz-00uanf_1634738811_gg.jpg" class="d-block w-100 product-detail-img"></div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h1 class="product-name fw-bold mb-2" style="color: #333;">Placa de Vídeo ASRock Radeon RX 6600 Challenger D, 8GB, GDDR6</h1>
+                    <p class="text-muted mb-3">Marca: <strong class="text-dark">ASRock</strong> | Modelo: <strong class="text-dark">RX6600 CLD 8G</strong></p>
+                    <div class="rating mb-3 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><span class="text-muted ms-2 small">(85 avaliações)</span></div>
+                    <hr>
+                    <div class="price-area my-4"><span class="d-block text-decoration-line-through text-muted mb-1 product-price-old">R$ 1.400,00</span><div class="d-flex align-items-center gap-3"><span class="product-price-new fw-bold display-6" style="color: var(--neon-green); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">R$ 1.199,00</span><span class="badge bg-success">-14% OFF</span></div><p class="product-installments mt-2"><span class="installment-highlight fs-5">10x</span> de <span class="installment-highlight fs-5">R$ 119,90</span> <span class="installment-light">sem juros</span></p></div>
+                    <div class="d-grid gap-2"><button class="btn btn-comprar btn-lg py-3" onclick="adicionarAoCarrinho(this)"><i class="bi bi-cart-plus me-2"></i> ADICIONAR AO CARRINHO</button></div>
+                    <div class="mt-4"><div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-truck text-success fs-4"></i><span class="fw-bold">Frete Grátis</span></div><div class="d-flex align-items-center gap-2"><i class="bi bi-shield-check text-success fs-4"></i><span class="fw-bold">Garantia 12 Meses</span></div></div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist"><li class="nav-item"><button class="nav-link active fw-bold text-dark" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc">Descrição</button></li><li class="nav-item"><button class="nav-link fw-bold text-dark" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs">Especificações</button></li><li class="nav-item"><button class="nav-link fw-bold text-dark" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews">Avaliações (85)</button></li></ul>
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom bg-light" id="myTabContent">
+                        <div class="tab-pane fade show active" id="desc" role="tabpanel"><p>O melhor custo-benefício para Full HD. A RX 6600 entrega alta performance em 1080p com baixo consumo de energia.</p></div>
+                        <div class="tab-pane fade" id="specs" role="tabpanel"><table class="table table-striped"><tbody><tr><th>Memória</th><td>8GB GDDR6</td></tr><tr><th>Interface</th><td>128-bit</td></tr><tr><th>Clock Boost</th><td>Até 2491 MHz</td></tr></tbody></table></div>
+                        <div class="tab-pane fade" id="reviews" role="tabpanel"><div class="review-item"><p><strong>Lucas M.</strong> <span class="text-warning">★★★★★</span><br>Roda tudo no ultra em 1080p.</p></div></div>
+                    </div>
+                </div>
+            </div>
+<div class="row mt-5">
+    
+    <div class="col-12">
+        <h3 class="related-products-title mb-4">Compre Junto</h3>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="placa_amd_x570_master.html" class="product-link">
+                <img src="https://images4.kabum.com.br/produtos/fotos/102414/placa-mae-aorus-x570-aorus-master-amd-am4-atx-ddr4_placa-mae-aorus-x570-aorus-master-amd-am4-atx-ddr4_1562250608_gg.jpg" class="product-img" alt="Ryzen 5 5600">
+            </a>
+            <a href="placa_amd_x570_master.html" class="product-link">
+                <h6 class="mb-0 product-name">Placa Mãe Gigabyte X570 Aorus</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 2.199,00</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="product-card card h-100 p-3 text-center">
+            <a href="placa_amd_x570.html" class="product-link">
+                <img src="https://images6.kabum.com.br/produtos/fotos/108346/placa-mae-asus-tuf-gaming-x570-plus-br-amd-am4-atx-ddr4_1578656928_gg.jpg" class="product-img" alt="Fonte 500W">
+            </a>
+            <a href="placa_amd_x570.html" class="product-link">
+                <h6 class="mb-0 product-name">Placa Mãe Asus TUF X570</h6>
+            </a>
+            <small class="product-price-new fs-6">R$ 1.199,00</small>
+            <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+        </div>
+    </div>
+
+</div>
+        </div> 
+    </main>
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

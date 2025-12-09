@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - PC & Hardware</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        
+        <div class="container mt-4 mb-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="banner-double rounded shadow">
+                        <img src="https://www.amd.com/content/dam/amd/en/images/photography/lifestyle/2383734-gamer-photo.jpg" alt="Destaque PC" class="img-fluid w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="banner-double rounded shadow">
+                        <img src="https://storage-asset.msi.com/global/picture/banner/banner_17400418768c7f91546bac859f75becf5fcf6f7f97.jpeg" alt="Destaque Notebook" class="img-fluid w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAIXAS DE CATEGORIA (MANTIDAS) -->
+        <div class="container-fluid p-0 mb-4">
+            <div class="banner-perifericos shadow d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="banner-img-container me-4 d-none d-md-flex">
+                        <img src="https://www.amd.com/content/dam/amd/en/images/products/desktops/3269802-radeon-ryzen-products.png" alt="Hardware" class="banner-img">
+                    </div>
+                    <div class="flex-grow-1 text-white py-3">
+                        <h2 class="m-0 banner-title mb-3">Hardware</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="placas.html" class="btn btn-category">Placas Mãe</a>
+                            <a href="processadores.html" class="btn btn-category">Processadores</a>
+                            <a href="placas_video.html" class="btn btn-category">Placas de Vídeo</a>
+                            <a href="fontes.html" class="btn btn-category">Fontes</a>
+                            <a href="armazenamento.html" class="btn btn-category">Armazenamento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0 mb-5">
+            <div class="banner-perifericos shadow d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="banner-img-container me-4 d-none d-md-flex">
+                        <img src="https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PC-VictrixProFGReloaded_products_desktop_AFS.png?v=1761169924&width=800&crop=center" alt="Periféricos" class="banner-img">
+                    </div>
+                    <div class="flex-grow-1 text-white py-3">
+                        <h2 class="m-0 banner-title mb-3">Periféricos</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="microfones.html" class="btn btn-category">Microfones</a>
+                            <a href="webcams.html" class="btn btn-category">WebCams</a>
+                            <a href="suportes.html" class="btn btn-category">Suportes</a>
+                            <a href="teclados.html" class="btn btn-category">Teclados</a>
+                            <a href="mouses.html" class="btn btn-category">Mouses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center mb-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <hr class="flex-grow-1 border-secondary" style="opacity: 1;">
+                <h3 class="mx-3 text-white fw-light">Destaques da Semana</h3>
+                <hr class="flex-grow-1 border-secondary" style="opacity: 1;">
+            </div>
+        </div>
+
+        <!-- PRODUTOS COM LINKS -->
+        <div class="container main-content-white mb-5">
+            <div class="row g-4 pt-3"> 
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="asus-rog-scar-18.html" class="product-link">
+                            <img src="https://images2.kabum.com.br/produtos/fotos/sync_mirakl/872622/xlarge/Notebook-Gamer-Asus-Rog-Strix-Scar-18-Intel-Core-Ultra-9-275hx-64GB-RAM-Nvidia-RTX5090-SSD-4TB-Tela-18-240Hz-Windows-11-Home-Black-G835lx_1755889506.jpg" class="product-img" alt="PC Gamer">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="asus-rog-scar-18.html" class="product-link">
+                                <h5 class="product-name">Notebook Gamer Asus Rog Strix Scar 18</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 26.999,00</span>
+                                <span class="product-price-new">R$ 23.999,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">12x</span> de <span class="installment-highlight">R$ 1.125,00</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="alienware-16-aurora.html" class="product-link">
+                            <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/ac16250/media-gallery/laptop-alienware-ac16250-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=488&qlt=100,1&resMode=sharp2&size=488,402&chrss=full" class="product-img" alt="Notebook">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="alienware-16-aurora.html" class="product-link">
+                                <h5 class="product-name">Notebook Alienware Aurora 16</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 18.500,00</span>
+                                <span class="product-price-new">R$ 16.200,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">12x</span> de <span class="installment-highlight">R$ 1.350,00</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="asus-rog-scar-18.html" class="product-link">
+                            <img src="https://br.store.asus.com/media/catalog/product/p/r/principal_01-_g835_.png?quality=90&bg-color=255,255,255&fit=bounds&height=439&width=439&canvas=439:439" class="product-img" alt="Placa de Vídeo">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="asus-rog-scar-18.html" class="product-link">
+                                <h5 class="product-name">Notebook Gamer Asus Rog Strix Scar 18</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 26.999,00</span>
+                                <span class="product-price-new">R$ 23.499,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 580,00</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="acer-predator-helios.html" class="product-link">
+                            <img src="https://images4.kabum.com.br/produtos/fotos/sync_mirakl/677554/xlarge/Notebook-Acer-Predator-Phn16-72-99my-Intel-Ci9-14900hx-14-Gen-32gb-1TB-SSD-RTX-4070-W11-Home-NH-QTVAL-002_1762352017.png" class="product-img" alt="Monitor">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="acer-predator-helios.html" class="product-link">
+                                <h5 class="product-name">Acer Predator Helios Neo</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 10.599,00</span>
+                                <span class="product-price-new">R$ 8.999,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 899,90</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="lenovo-legion-pro.html" class="product-link">
+                            <img src="https://images2.kabum.com.br/produtos/fotos/sync_mirakl/738792/xlarge/Notebook-Lenovo-Legion-5-16irx9-Intel-Core-i9-14900hx-32gb-1TB-SSD-RTX-4070-WINDOWS-11-16-83ew0004br-Luna-Grey_1763058818.jpg" class="product-img" alt="Kit Upgrade">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="lenovo-legion-pro.html" class="product-link">
+                                <h5 class="product-name">Lenovo Legion Pro 7i</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 23.999,00</span>
+                                <span class="product-price-new">R$ 19.999,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 1.999,90</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="msi-raider-ge78.html" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/71IZpN3-2BL._AC_SX679_.jpg" class="product-img" alt="Gabinete">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="msi-raider-ge78.html" class="product-link">
+                                <h5 class="product-name">MSI Raider GE78 HX</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 29.999,00</span>
+                                <span class="product-price-new">R$ 25.999,00</span>
+                            </div>
+                            <p class="product-installments">
+                                <span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 2.599,90</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-target"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

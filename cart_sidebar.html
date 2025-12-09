@@ -1,0 +1,21 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrinho" aria-labelledby="offcanvasCarrinhoLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-bold text-white" id="offcanvasCarrinhoLabel">
+            MEU CARRINHO <i class="bi bi-cart4 ms-2" style="color: var(--neon-green);"></i>
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    
+    <div class="offcanvas-body d-flex flex-column">
+        <div id="lista-itens-carrinho" class="flex-grow-1 overflow-auto mb-3">
+            <p class="text-center text-muted mt-5">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer border-top border-secondary pt-3">
+            <div class="d-flex justify-content-between text-white fw-bold mb-3 fs-5">
+                <span>TOTAL:</span>
+                <span id="preco-total-carrinho" style="color: var(--neon-green);">R$ 0,00</span>
+            </div>
+            <button class="btn btn-comprar w-100">FINALIZAR COMPRA</button>
+        </div>
+    </div>
+</div>

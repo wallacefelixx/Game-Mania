@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Pagamento - Game Mania</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Formas de Pagamento</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            <h1 class="h2 mb-4 fw-bold" style="color: var(--dark-blue);">
+                Formas de <span style="color: var(--neon-green);">Pagamento</span>
+            </h1>
+            <p class="text-muted mb-5">Escolha a opção que melhor se adapta ao seu bolso. Oferecemos segurança total em todas as transações.</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 payment-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-x-diamond-fill"></i>
+                            </div>
+                            <h4 class="fw-bold text-dark">PIX</h4>
+                            <span class="badge bg-success mb-3" style="background-color: var(--neon-green) !important; color: #000;">10% DE DESCONTO</span>
+                            <p class="text-muted small">
+                                Aprovação imediata. O jeito mais rápido e barato de comprar seu equipamento novo. O QR Code é gerado na finalização da compra.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 payment-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-credit-card-2-front-fill"></i>
+                            </div>
+                            <h4 class="fw-bold text-dark">Cartão de Crédito</h4>
+                            <span class="badge bg-dark mb-3">ATÉ 10X SEM JUROS</span>
+                            <p class="text-muted small">
+                                Aceitamos Visa, Mastercard, Elo, Hipercard e Amex. A análise de crédito é realizada instantaneamente pela operadora.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 payment-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3">
+                                <i class="bi bi-upc-scan"></i>
+                            </div>
+                            <h4 class="fw-bold text-dark">Boleto Bancário</h4>
+                            <span class="badge bg-dark mb-3">5% DE DESCONTO</span>
+                            <p class="text-muted small">
+                                Para quem prefere pagar à vista mas não usa Pix. O prazo de compensação bancária é de 1 a 2 dias úteis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5 border-light">
+
+            <div class="row align-items-center bg-light p-4 rounded border">
+                <div class="col-md-8">
+                    <h5 class="fw-bold text-dark mb-2"><i class="bi bi-shield-check me-2" style="color: var(--neon-green);"></i> Ambiente Seguro</h5>
+                    <p class="text-muted small mb-0">Todas as transações são criptografadas (SSL) e processadas por gateways de pagamento certificados. Seus dados financeiros nunca ficam salvos em nossos servidores.</p>
+                </div>
+                <div class="col-md-4 text-center text-md-end mt-3 mt-md-0 opacity-50">
+                    <i class="bi bi-lock-fill display-4 text-secondary"></i>
+                </div>
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
