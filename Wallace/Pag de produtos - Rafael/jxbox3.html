@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Nintendo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container do Carrinho -->
+    <div id="cart-sidebar-container"></div>
+
+    <!-- Header -->
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        
+        <!-- Breadcrumb -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item"><a href="consoles.html" class="text-decoration-none text-muted">Consoles</a></li>
+                    <li class="breadcrumb-item"><a href="xbox.html" class="text-decoration-none text-muted">Xbox</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Ver Tudo</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- ÁREA DO PRODUTO -->
+        <div class="container main-content-white mb-5">
+            
+            <div class="row product-card pt-3">
+                
+                <!-- Coluna da Imagem (Carrossel Simples) -->
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <div id="productCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        
+                        <div class="carousel-inner rounded shadow-sm">
+                            <div class="carousel-item active">
+                                <img src="jxbox3.webp" class="d-block w-100 product-detail-img" alt="Ryzen 3 3200G Caixa">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="jxbox3.webp" class="d-block w-100 product-detail-img" alt="Switch">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="jxbox3.webp" class="d-block w-100 product-detail-img" alt="Ryzen 3 3200G Cooler">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coluna das Informações -->
+                <div class="col-12 col-md-6">
+                    <h1 class="product-name fw-bold mb-2" style="color: #333;">Controle Xbox s/ Fio + Cabo USB-C - Xbox Series X/S, One e PC</h1>
+                    <p class="text-muted mb-3">Marca: <strong class="text-dark">Xbox</strong> | Modelo: <strong class="text-dark">Series</strong></p>
+                    
+                    <div class="rating mb-3 text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <span class="text-muted ms-2 small">(2 avaliações)</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="price-area my-4">
+                        <span class="d-block text-decoration-line-through text-muted mb-1 product-price-old">R$ 5.559,99</span>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="product-price-new fw-bold display-6" style="color: var(--neon-green); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">R$ 5.370,00</span>
+                            <span class="badge bg-success">-18% OFF</span>
+                        </div>
+                        <p class="product-installments mt-2">
+                            <span class="installment-highlight fs-5">9x</span> de <span class="installment-highlight fs-5">R$ 590,66</span> <span class="installment-light">sem juros no cartão</span>
+                        </p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-comprar btn-lg py-3" onclick="adicionarAoCarrinho(this)">
+                            <i class="bi bi-cart-plus me-2"></i> ADICIONAR AO CARRINHO
+                        </button>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-truck text-success fs-4"></i>
+                            <span class="fw-bold">Frete Grátis</span>
+                            <span class="text-muted small">para Sul e Sudeste</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-shield-check text-success fs-4"></i>
+                            <span class="fw-bold">Garantia</span>
+                            <span class="text-muted small">de 3 anos com a fabricante</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Abas de Informações -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-bold text-dark" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button">Descrição</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-bold text-dark" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button">Especificações Técnicas</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-bold text-dark" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Avaliações (2)</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom bg-light" id="myTabContent">
+                        
+                        <!-- Descrição -->
+                        <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                            <p><strong>Diversão e entretenimento</strong></p>
+                            <p>Xbox é mais do que um console de videogame: ele é um portal pra uma infinidade de aventuras!</p>
+                            <p><strong>Grande diversidade de jogos e aventuras</strong></p>
+                            <p> Desde jogos familiares cheios de diversão até títulos épicos que vão te levar pra mundos fantásticos, só ele é capaz de transformar qualquer momento no lugar perfeito pra jogar.</p>
+                        </div>
+                        
+                        <!-- Especificações -->
+                        <div class="tab-pane fade" id="specs" role="tabpanel">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr><th scope="row">Armazenamento</th><td>128gb</td></tr>
+                                    <tr><th scope="row">RAM</th><td>4gb</td></tr>
+                                    <tr><th scope="row">tamanho da tela</th><td>6.2 polegadas</td></tr>
+                                    <tr><th scope="row">Processador</th><td>Nvidia Tegra X1 personalizado.</td></tr>
+                                    <tr><th scope="row">Taxa de FPS máximo</th><td>60 fps</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Avaliações -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="review-item">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="review-avatar me-3">RF</div>
+                                    <div><h6 class="mb-0 fw-bold">Rafael Ferreira</h6><div class="text-warning small">★★★★★</div></div>
+                                </div>
+                                <p class="text-muted mb-0">Melhor custo benefício para quem está querendo algo divertido e prático.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="review-avatar me-3">LS</div>
+                                    <div><h6 class="mb-0 fw-bold">Lucas Silva</h6><div class="text-warning small">★★★★★</div></div>
+                                </div>
+                                <p class="text-muted mb-0">Muito bom para jogar com a família e se divertir.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO COMPRE JUNTO (4 ITENS DE ENTRADA) -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="related-products-title mb-4">Compre Junto</h3>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="#" class="product-link"><img src="switch2.png" class="img-fluid mb-2"></a>
+                        <a href="#" class="product-link"><h6 class="mb-0 product-name">Nintendo Switch OLED Legend of Zelda Tears of the Kingdom</h6></a>
+                        <small class="product-price-new fs-6">R$ 5.296,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="#" class="product-link"><img src="switch3.png" class="img-fluid mb-2"></a>
+                        <a href="#" class="product-link"><h6 class="mb-0 product-name">Console Nintendo Switch 2 + Mario Kart World Bundle</h6></a>
+                        <small class="product-price-new fs-6">R$ 5.296,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="#" class="product-link"><img src="switch4.jpg" class="img-fluid mb-2"></a>
+                        <a href="#" class="product-link"><h6 class="mb-0 product-name">Nintendo Switch Lite Turquoise - Turquesa</h6></a>
+                        <small class="product-price-new fs-6">R$ 1.596,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card card h-100 p-3 text-center">
+                        <a href="#" class="product-link"><img src="switch5.webp" class="img-fluid mb-2"></a>
+                        <a href="#" class="product-link"><h6 class="mb-0 product-name">Nintendo Switch Lite Yellow - Amarelo</h6></a>
+                        <small class="product-price-new fs-6">R$ 1.596,00</small>
+                        <button class="btn btn-comprar btn-sm mt-2" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-target"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Jogos Nintendo</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <style>
+        /* Variáveis Principais */
+:root {
+    --gm-green: #5ed12b;
+    --gm-dark: #0b0e1f;
+    --gm-gray: #f4f4f4;
+}
+body {
+    background-color: #f4f4f4;
+}
+
+body {
+    background-color: var(--gm-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Utilitários */
+.bg-dark-blue { background-color: var(--gm-dark) !important; }
+.text-green { color: var(--gm-green) !important; }
+.hover-green:hover { color: #39ff14!important; text-decoration: underline !important; }
+
+/* Logo */
+.logo-text {
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 0;
+    color: white;
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    text-transform: uppercase;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--gm-green) !important; }
+
+/* --- Títulos Centrais com Linha --- */
+.title-underline-center {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.title-underline-center::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--gm-green);
+    margin: 8px auto 0; /* Centraliza a linha */
+}
+.spacing-wide { letter-spacing: 2px; }
+
+/* --- Carrossel de Marcas e Depoimentos --- */
+/* Customização das setas de navegação para serem escuras e laterais */
+.custom-control-dark {
+    width: 5%;
+    background: transparent;
+    opacity: 1; /* Sempre visível */
+}
+.custom-control-dark:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+.brand-logo {
+    max-height: 50px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.brand-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Cards de Categoria */
+.hover-scale {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+.hover-scale:hover {
+    transform: translateY(-5px);
+}
+.hover-scale img {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover img {
+    transform: scale(1.05);
+}
+
+/* Produtos */
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.btn-comprar {
+    background-color: var(--gm-dark);
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 8px 0;
+}
+.btn-comprar:hover {
+    background-color:  #39ff14;
+    color: black;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo-text { font-size: 1.5rem; }
+    /* Ajustes para mobile */
+    .brand-logo { max-height: 30px; margin: 0 10px; }
+}
+
+:root {
+    --neon-green: #39ff14;
+    --dark-blue: #03051a;
+    --search-bg: #f0f8ff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: var(--neon-green);
+    color: #000;
+    height: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* --- Navbar Principal --- */
+.bg-custom-dark {
+    background-color: var(--dark-blue);
+}
+
+/* CONFIGURAÇÃO DA LOGO IMAGEM */
+/* CONFIGURAÇÃO DA LOGO IMAGEM (Tamanho Aumentado) */
+.logo-img {
+    max-height: 90px; /* Aumentado para 90px (era 60px) */
+    width: auto;      /* Mantém a proporção correta */
+    display: block;
+    transition: all 0.3s ease; /* Efeito suave se redimensionar a tela */
+}
+
+/* --- Ajustes Mobile --- */
+@media (max-width: 991px) {
+    .nav-link:hover {
+        color: var(--neon-green) !important;
+    }
+    
+    /* Tamanho da logo no celular */
+    .logo-img {
+        max-height: 60px; /* Aumentado para 60px (era 45px) */
+    }
+    
+    .header-icons {
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+}
+
+/* --- Busca --- */
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.search-input {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--search-bg);
+    padding: 10px 40px 10px 15px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    border: none;
+    background: transparent;
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+}
+
+/* --- Ícones --- */
+.header-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: var(--neon-green);
+}
+
+/* --- Barra de Categorias (Desktop) --- */
+.category-bar {
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -6px #000;
+}
+
+.cat-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 25px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.cat-link:hover {
+    color: var(--neon-green);
+}
+
+.cat-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--neon-green);
+    transition: width 0.3s ease;
+}
+
+.cat-link:hover::after {
+    width: 100%;
+}
+
+/* --- Ajustes Mobile --- */
+@media (max-width: 991px) {
+    .nav-link:hover {
+        color: var(--neon-green) !important;
+    }
+    
+    /* Reduz um pouco a logo no celular se necessário */
+    .logo-img {
+        max-height: 45px;
+    }
+    
+    .header-icons {
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+}
+
+/* --- Barra de Benefícios (Compacta) --- */
+
+:root {
+    --neon-green: #39ff14; 
+}
+
+.benefits-bar {
+    background: linear-gradient(90deg, #020412 0%, #0a1142 50%, #020412 100%);
+    border-bottom: 1px solid #1a1a40;
+    position: relative;
+    width: 100%;
+    /* Garante que a barra não fique menor que isso, mas permite crescer se necessário */
+    min-height: 60px; 
+}
+
+/* Ícone menor e mais ajustado */
+.icon-neon {
+    font-size: 1.6rem; /* Reduzido de 2.2rem para 1.6rem */
+    color: var(--neon-green);
+    filter: drop-shadow(0 0 3px rgba(38, 255, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover .icon-neon {
+    transform: scale(1.1);
+}
+
+/* Texto do Título (10% OFF, etc) */
+.benefit-title {
+    font-size: 1rem; /* Tamanho padrão de leitura (16px) */
+    line-height: 1;  /* Linha mais apertada */
+    margin-bottom: 2px;
+}
+
+/* Texto pequeno (subtítulo) */
+.text-muted-light {
+    color: #b0b3c6;
+    font-size: 0.75rem; /* Texto bem pequeno e discreto */
+    display: block;     /* Garante que fique na linha de baixo */
+    line-height: 1;
+}
+
+/* --- Bordas e Responsividade --- */
+
+@media (min-width: 768px) {
+    .border-desktop {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        height: 35px; /* Altura fixa da borda para não esticar demais */
+    }
+}
+
+@media (max-width: 767px) {
+    .benefit-item {
+        justify-content: flex-start !important;
+        padding: 8px 0; /* Padding menor no mobile */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .col-12:last-child .benefit-item {
+        border-bottom: none;
+    }
+}
+
+/* Estilização específica do Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0e27;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #39ff14;
+            border-radius: 5px;
+        }
+
+        .text-neon-green {
+            color: var(--gm-green);
+        }
+        .bg-neon-green {
+            background-color: var(--gm-green);
+        }
+        
+        .main-container {
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        /* --- FOOTER --- */
+.bg-blue-dark {
+    background-color: #050a30;
+}
+.border-top-neon {
+    border-top: 4px solid var(--gm-green);
+}
+.hover-white:hover {
+    color: white !important;
+}
+.bg-neon {
+    background-color: #39ff14;
+}
+.text-dark-blue {
+    color:  #050a30;
+}
+.hover-scale {
+    transition: transform 0.2s;
+}
+.hover-scale:hover {
+    transform: scale(1.2);
+}
+
+.card-title {
+    color: rgb(98, 32, 160);
+}
+
+.border {
+    color: #39ff14;
+}
+
+.btn-success {
+    background-color:rgb(98, 32, 160)!important;  /* cor nova */
+    border-color:rgb(98, 32, 160) !important;
+}
+
+.btn-success:hover {
+    background-color: #39ff14 !important;
+    border-color:  #39ff14 !important;
+}
+
+.ftlogo {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+     max-height: 90px; /* Aumentado para 90px (era 60px) */
+    width: auto;      /* Mantém a proporção correta */
+    
+    transition: all 0.3s ease; /* Efeito suave se redimensionar a tela */
+}
+
+    </style>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+
+   <header>
+   <div class="top-bar d-flex justify-content-center align-items-center">
+        <span class="fw-bold text-uppercase">
+            Aceitamos Pix <i class="bi bi-x-diamond-fill ms-1"></i>
+        </span>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark pt-3 pb-2">
+        <div class="container">
+            
+            <a class="navbar-brand me-4" href="#">
+                <img src="/LOGO.png" alt="Logo Game Mania" class="logo-img">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                
+                <form class="d-flex mx-auto search-container my-3 my-lg-0">
+                    <input class="form-control search-input" type="search" placeholder="Precisa de alguma coisa?" aria-label="Search">
+                    <button class="btn search-btn" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <div class="header-icons d-flex align-items-center justify-content-center gap-4 mb-3 mb-lg-0">
+                    <a href="#" title="Atendimento"><i class="bi bi-chat-text"></i></a>
+                    <a href="#" title="Rastreio"><i class="bi bi-truck"></i></a>
+                    <a href="#" title="Minha Conta"><i class="bi bi-person-fill"></i></a>
+                    <a href="#" title="Carrinho"><i class="bi bi-cart-fill"></i></a>
+                </div>
+
+                <ul class="navbar-nav d-lg-none border-top border-secondary mt-3 pt-3 text-center">
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">JOGOS</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">CONSOLES</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">PC</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">DIVERSOS</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">NOTEBOOK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="category-bar d-none d-lg-block bg-custom-dark border-top border-secondary">
+        <div class="container d-flex justify-content-center">
+            <a href="#" class="cat-link">JOGOS</a>
+            <a href="#" class="cat-link">CONSOLES</a>
+            <a href="#" class="cat-link">PC</a>
+            <a href="#" class="cat-link">DIVERSOS</a>
+            <a href="#" class="cat-link">NOTEBOOK</a>
+        </div>
+    </div>
+
+    <section class="benefits-bar">
+
+        
+<section class="benefits-bar">
+    <div class="container">
+        <div class="row py-2 align-items-center">
+            
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start benefit-item">
+                    <i class="bi bi-x-diamond-fill icon-neon me-2"></i>
+                    <div class="benefit-text">
+                        <span class="d-block fw-bold text-white text-uppercase benefit-title">10% de Desconto</span>
+                        <small class="text-muted-light">pix / boleto / depósito</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-center benefit-item border-desktop">
+                    <i class="bi bi-credit-card-2-front-fill icon-neon me-2"></i>
+                    <div class="benefit-text">
+                        <span class="d-block fw-bold text-white text-uppercase benefit-title">9x sem Juros</span>
+                        <small class="text-muted-light">cartão de crédito / paypal</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-end benefit-item">
+                    <i class="bi bi-truck-front-fill icon-neon me-2"></i>
+                    <div class="benefit-text">
+                        <span class="d-block fw-bold text-white text-uppercase benefit-title">Frete Grátis</span>
+                        <small class="text-muted-light">sul e sudeste*</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </header>
+   
+
+    <div class="container my-4">
+        <div class="row">
+            
+            <aside class="col-md-3 d-none d-md-block">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active-custom">Jogos Nintendo</a>
+                    <a href="#" class="list-group-item list-group-item-action border-0 fw-bold">Home > Novidades</a>
+                    <a href="#" class="list-group-item list-group-item-action border-0">Consoles</a>
+                    <a href="#" class="list-group-item list-group-item-action border-0">PC</a>
+                    <a href="#" class="list-group-item list-group-item-action border-0">Diversos</a>
+                    <a href="#" class="list-group-item list-group-item-action border-0">Notebook</a>
+                    
+                </div>
+            </aside>
+
+            <main class="col-md-9">
+                
+                <div class="banner-box p-5 mb-4">
+                    <img src="img/sorteio switch.png" width ="165%" height="165%">
+                    
+                </div>
+
+                <section class="mb-5">
+                    <h2 class="section-title border-bottom pb-2 mb-3">Nintendo</h2>
+                    <p class="text-muted">A Nintendo, fundada em 1889 como uma fabricante de baralhos, evoluiu ao longo dos anos e se transformou em um dos maiores nomes da história dos videogames. Responsável por franquias icônicas como Mario Bros e The Legend of Zelda, a empresa revolucionou o entretenimento eletrônico e marcou gerações com sua criatividade e inovação.
+O universo dos games não seria o mesmo sem a criatividade e inovação da Nintendo. E aqui na Game Mania, você encontra os principais títulos para Wii, Wii U e Nintendo 3DS, perfeitos para quem é fã de verdade e quer reviver ou descobrir essas aventuras épicas.</p>
+                </section>
+
+                <section>
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/anelqnservepporranenhuma.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Ring Fit Adventure - Switch
+                                    </h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$996,00</p>
+                                    <p class="text-green fw-bold">R$ 796,00</p>
+                                    <p class="small text-muted">9x de R$ 88,44 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/mariodasbolas.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Mario Tennis Aces - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 559,99</p>
+                                    <p class="text-green fw-bold">R$ 536,00</p>
+                                    <p class="small text-muted">9x de R$ 59,55 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/mariodoarmario2.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Super Mario Maker 2 - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 416,00</p>
+                                    <p class="text-green fw-bold">R$  396,00</p>
+                                    <p class="small text-muted">9x de R$ 44,00 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/marioqtecomeuatrasdoarmario.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Super Mario 3D World + Bowser's Fury - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 566,00</p>
+                                    <p class="text-green fw-bold">R$ 466,00</p>
+                                    <p class="small text-muted">9x de R$ 51,77 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/cabiçudo.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Captain Toad Treasure Tracker - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 636,00</p>
+                                    <p class="text-green fw-bold">R$ 526,00</p>
+                                    <p class="small text-muted">9x de R$ 58,44 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/pikanuku.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Pokemon Let's Go Pikachu! - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 575,00</p>
+                                    <p class="text-green fw-bold">R$ 526,00</p>
+                                    <p class="small text-muted">9x de R$ 58,44 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/pokemonsword.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Pokemon Sword and Pokemon Shield Double Pack - Switch
+                                    </h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$3050,00</p>
+                                    <p class="text-green fw-bold">R$ 2.296,00,00</p>
+                                    <p class="small text-muted">9x de R$ 255,11 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/rapazeadinhadobem.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Marvel Ultimate Alliance 3 The Black Order - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 530,99</p>
+                                    <p class="text-green fw-bold">R$ 496,00</p>
+                                    <p class="small text-muted">9x de R$ 55,11 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/fnaf.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Five Nights at Freddy's The Core Collection - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 356,00</p>
+                                    <p class="text-green fw-bold">R$ 326,00</p>
+                                    <p class="small text-muted">9x de R$ 36,22 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/crash.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Crash 4 It's About Time - Switch</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 376,00</p>
+                                    <p class="text-green fw-bold">R$ 356,00</p>
+                                    <p class="small text-muted">9x de R$ 39,55 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/controlezelda.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Controle Nintendo Switch Pro Zelda Tears of the Kingdom</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 899,00</p>
+                                    <p class="text-green fw-bold">R$ 699,00</p>
+                                    <p class="small text-muted">9x de R$ 77,66 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100 border-0 text-center product-card">
+                                <img src="img/skylanders.png" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem;">Skylanders Imaginators Egg Bomber Air Strike Sensei</h6>
+                                    <p class="text-muted text-decoration-line-through small mb-0">R$ 599,99</p>
+                                    <p class="text-green fw-bold">R$ 569,00</p>
+                                    <p class="small text-muted">9x de R$ 63,22 sem juros</p>
+                                    <button class="btn btn-dark btn-sm w-100 btn-comprar">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-blue-dark text-secondary small border-top-neon">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white fw-bold text-uppercase mb-3">Institucional</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Quem Somos</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Termos e Condições</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white fw-bold text-uppercase mb-3">Dúvidas</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Como comprar</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Prazos e Entregas</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Formas de Pagamento</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white fw-bold text-uppercase mb-3">Cliente</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Minha conta</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Meus pedidos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white fw-bold text-uppercase mb-3">Ajuda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Fale Conosco</a></li>
+                        <li><a href="#" class="text-decoration-none text-secondary hover-white">Central de Ajuda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-neon py-3">
+            <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 text-dark-blue">
+                <span class="fw-bold">SIGA-NOS</span>
+                <div class="fs-4 d-flex gap-3">
+                    <i class="fab fa-instagram cursor-pointer hover-scale"></i>
+                    <i class="fab fa-twitter cursor-pointer hover-scale"></i>
+                    <i class="fab fa-youtube cursor-pointer hover-scale"></i>
+                    <i class="fab fa-facebook cursor-pointer hover-scale"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black py-4 text-center">
+            <div class="h4 fw-bold text-white mb-2">
+                GAME <span class="text-neon"><i class="fas fa-gamepad"></i></span> MANIA
+            </div>
+            <p class="mb-0 text-white">© 2023 Game Mania. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap e Custom -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="testepedro.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - A Loja do Gamer</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+
+    <header id="header-target"></header>
+
+    <main>
+        
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+            
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="perifericos.html"><img src="https://img.terabyteshop.com.br/banner/3797.gif" class="d-block w-100 hero-carousel-img" alt="Promoção"></a>
+                    <div class="carousel-caption d-none d-md-block text-start">
+
+                        <a href="perifericos.html" class="btn btn-comprar px-5" style="width: auto;">CONFERIR AGORA</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="placas.html"><img src="https://i.chipart.openk.com.br/banner/ban_171_14_369.jpg" class="d-block w-100 hero-carousel-img" alt="RTX 40 Series"></a>
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <a href="placas.html" class="btn btn-comprar px-5" style="width: auto;">COMPRAR</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="pc.html"><img src="https://i.chipart.openk.com.br//banner/ban_171_14_391.jpg" class="d-block w-100 hero-carousel-img" alt="Monte seu PC"></a>
+                    <div class="carousel-caption d-none d-md-block text-end">
+
+                        <a href="pc.html" class="btn btn-comprar px-5" style="width: auto;">VER PEÇAS</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <div class="container py-5">
+            <div class="row text-center justify-content-center g-4">
+                
+                <div class="col-6 col-md-3 col-lg-3 cat-item">
+                    <a href="pc.html" class="text-decoration-none">
+                        <div class="category-circle"><i class="bi bi-pc-display"></i></div>
+                        <span class="cat-label">PC Gamer</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-3 cat-item">
+                    <a href="pc.html" class="text-decoration-none">
+                        <div class="category-circle"><i class="bi bi-gpu-card"></i></div>
+                        <span class="cat-label">Hardware</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-3 cat-item">
+                    <a href="#" class="text-decoration-none"> 
+                        <div class="category-circle"><i class="bi bi-controller"></i></div>
+                        <span class="cat-label">Consoles</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-3 cat-item">
+                    <a href="perifericos.html" class="text-decoration-none">
+                        <div class="category-circle"><i class="bi bi-keyboard"></i></div>
+                        <span class="cat-label">Periféricos</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h2 class="section-title m-0">Ofertas Relâmpago <i class="bi bi-lightning-charge-fill text-warning"></i></h2>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fw-bold text-muted text-uppercase small">Termina em:</span>
+                    <div class="countdown-box" id="countdown-timer">00 : 00 : 00</div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <span class="badge bg-danger position-absolute top-0 end-0 m-2">-20%</span>
+                        <a href="ryzen2.html" class="product-link">
+                            <img src="https://images8.kabum.com.br/produtos/fotos/320798/processador-amd-ryzen-5-5600-cache-35mb-3-7ghz-4-4ghz-max-turbo-am4-100-100000927box_1647636743_gg.jpg" class="product-img" alt="Ryzen 5 5600">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen2.html" class="product-link"><h5 class="product-name">AMD Ryzen 5 5600</h5></a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 1.100,00</span>
+                                <span class="product-price-new">R$ 829,90</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 82,99</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <span class="badge bg-danger position-absolute top-0 end-0 m-2">-15%</span>
+                        <a href="farcry6.html" class="product-link">
+                            <img src="https://http2.mlstatic.com/D_NQ_NP_976236-MLB54166640950_032023-O.webp" class="product-img" alt="RTX 4060">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="farcry6.html" class="product-link"><h5 class="product-name">FarCry 6 PS5</h5></a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 139,00</span>
+                                <span class="product-price-new">R$ 100,00</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 10,00</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <a href="teclados.html" class="product-link">
+                            <img src="https://images1.kabum.com.br/produtos/fotos/697721/playstation-portal-reprodutor-remoto-para-console-ps5-midnight-black-1000044181_1736940115_gg.jpg" class="product-img" alt="Teclado RGB">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="teclados.html" class="product-link"><h5 class="product-name">Playstation Portal</h5></a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 1.499,00</span>
+                                <span class="product-price-new">R$ 1.394,07</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 149,90</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <a href="mouses.html" class="product-link">
+                            <img src="https://images0.kabum.com.br/produtos/fotos/636960/console-playstation-5-pro-sony-ssd-2tb-controle-sem-fio-dualsense-branco-1000046552_1727095996_gg.jpg" class="product-img" alt="Mouse Gamer">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="mouses.html" class="product-link"><h5 class="product-name">PlayStation 5 Pro 2tb</h5></a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 6.499,00</span>
+                                <span class="product-price-new">R$ 6.044,07</span>
+                            </div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 649,90</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="banner-double rounded shadow overflow-hidden position-relative">
+                        <img src="https://i.chipart.openk.com.br/banner/ban_171_14_358.jpg" class="img-fluid w-100 banner-promo-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
+                            <a href="pc.html" class="btn btn-outline-light rounded-pill px-5 py-2 fw-bold" style="border-width: 2px;">CONFIRA AS OPÇÕES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title my-4">Lançamentos <i class="bi bi-rocket-takeoff text-primary"></i></h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <span class="badge bg-primary position-absolute top-0 end-0 m-2">NOVO</span>
+                        <a href="intel4.html" class="product-link">
+                            <img src="https://images4.kabum.com.br/produtos/fotos/sync_mirakl/506014/xlarge/Processador-Intel-Core-I9-14900k-14-Gera-o-3-6-GHZ-6-0-GHZ-Turbo-Cache-36MB-Intel-LGA1700-BX8071514900K_1756393789.jpg" class="product-img" alt="i9">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="intel4.html" class="product-link"><h5 class="product-name">Intel Core i9-14900K</h5></a>
+                            <div class="price-container"><span class="product-price-new">R$ 3.999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">12x</span> de R$ 333,25</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <a href="lenovo-legion-pro.html" class="product-link">
+                            <img src="https://images2.kabum.com.br/produtos/fotos/sync_mirakl/738792/xlarge/Notebook-Lenovo-Legion-5-16irx9-Intel-Core-i9-14900hx-32gb-1TB-SSD-RTX-4070-WINDOWS-11-16-83ew0004br-Luna-Grey_1763058818.jpg" class="product-img" alt="Webcam">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="lenovo-legion-pro.html" class="product-link"><h5 class="product-name">Notebook Gamer Lenovo Legion Pro</h5></a>
+                            <div class="price-container"><span class="product-price-new">R$ 19.999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">10x</span> de R$ 1.999,90</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <a href="mic_shure_sm7b.html" class="product-link">
+                            <img src="https://products.shureweb.eu/cdn-cgi/image/width=1380,height=1380,format=auto/shure_product_db/product_main_images/files/7e1/bf6/ed-/original/721ed7ee412b45897688a7b5acdefa44.webp" class="product-img" alt="Headset">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="mic_shure_sm7b.html" class="product-link"><h5 class="product-name">Microfone Shure SM7B</h5></a>
+                            <div class="price-container"><span class="product-price-new">R$ 2.999,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">12x</span> de R$ 249,91</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="product-card card h-100">
+                        <a href="ryzen4.html" class="product-link">
+                            <img src="https://images1.kabum.com.br/produtos/fotos/378411/processador-amd-ryzen-9-7950x-5-7ghz-max-turbo-cache-80mb-am5-16-nucleos-video-integrado-100-100000514wof_1662132759_gg.jpg" class="product-img" alt="Ryzen 9">
+                        </a>
+                        <div class="card-body d-flex flex-column text-center p-0">
+                            <a href="ryzen4.html" class="product-link"><h5 class="product-name">AMD Ryzen 9 7950X</h5></a>
+                            <div class="price-container"><span class="product-price-new">R$ 3.199,00</span></div>
+                            <p class="product-installments"><span class="installment-highlight">12x</span> de R$ 266,58</p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="newsletter-section text-center text-white">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <i class="bi bi-envelope-paper-heart-fill display-4 mb-3 d-block text-neon-green"></i>
+                        <h3 class="fw-bold text-uppercase mb-2">Não perca nenhuma oferta!</h3>
+                        <p class="text-white-50 mb-4">Cadastre-se para receber promoções exclusivas e cupons de desconto.</p>
+                        
+                        <form class="d-flex gap-2">
+                            <input type="email" class="form-control rounded-pill border-0 px-4" placeholder="Seu melhor e-mail...">
+                            <button type="button" class="btn rounded-pill fw-bold px-4" style="background-color: var(--neon-green); color: #000;">CADASTRAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer-target"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

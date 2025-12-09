@@ -2,22 +2,18 @@
 // 1. VARIÁVEIS GLOBAIS E UTILITÁRIOS
 // ==========================================================================
 
-// Recupera o carrinho do LocalStorage ou inicia vazio
 let carrinhoItens = JSON.parse(localStorage.getItem('gamemania_carrinho')) || [];
 
-// Função auxiliar para converter "R$ 1.000,00" em número (1000.00)
 function converterPrecoParaNumero(textoPreco) {
     if (!textoPreco) return 0;
     let limpo = textoPreco.replace('R$', '').replaceAll('.', '').replace(',', '.').trim();
     return parseFloat(limpo) || 0;
 }
 
-// Função para formatar número (1000.00) para Real "R$ 1.000,00"
 function formatarMoeda(valor) {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// Função genérica para carregar HTML externo (Header/Footer)
 async function loadComponent(elementId, filePath) {
     try {
         const response = await fetch(filePath);
@@ -26,7 +22,6 @@ async function loadComponent(elementId, filePath) {
         const element = document.getElementById(elementId);
         if(element) {
             element.innerHTML = data;
-            // Se for o sidebar, atualiza o visual dele assim que carregar
             if(elementId === "cart-sidebar-container") {
                 atualizarVisualizacaoCarrinho();
             }
@@ -37,33 +32,32 @@ async function loadComponent(elementId, filePath) {
 }
 
 // ==========================================================================
-// 2. INICIALIZAÇÃO DO SITE (Ao carregar a página)
+// 2. INICIALIZAÇÃO DO SITE
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", async () => {
     
-    // Carrega Header e Footer
     await loadComponent("header-target", "header.html");
     await loadComponent("footer-target", "footer.html");
     
-    // Carrega Sidebar do Carrinho (apenas se o container existir na página)
     if(document.getElementById("cart-sidebar-container")) {
         await loadComponent("cart-sidebar-container", "cart_sidebar.html");
     }
 
-    // Inicializa Carrossel (se existir)
-    var myCarousel = document.querySelector('#carouselGameMania');
-    if(myCarousel) {
-        new bootstrap.Carousel(myCarousel, { interval: 3000, ride: 'carousel' });
-    }
-
-    // Renderiza a página de Checkout (se estiver nela)
+    // Não inicializamos o Carousel aqui para deixar o HTML controlar
     if(document.getElementById("checkout-resumo-container")) {
         renderizarPaginaCheckout();
     }
+
+    if(document.getElementById("countdown-timer")) {
+        iniciarContagemRegressiva(5 * 60 * 60); // 5 horas
+    }
+
+    // === INICIALIZA O ROBÔ AQUI ===
+    inicializarRoboGamer();
 });
 
 // ==========================================================================
-// 3. LÓGICA DO CARRINHO (Adicionar, Remover, Abrir)
+// 3. LÓGICA DO CARRINHO
 // ==========================================================================
 
 function abrirCarrinho(e) {
@@ -76,31 +70,24 @@ function abrirCarrinho(e) {
 }
 
 function adicionarAoCarrinho(botao) {
-    // Encontra o card do produto mais próximo do botão clicado
     const card = botao.closest('.product-card'); 
-    
-    // Captura os dados
     const nome = card.querySelector('.product-name').innerText;
     const precoElement = card.querySelector('.product-price-new');
     const precoTexto = precoElement ? precoElement.innerText : 'R$ 0,00';
     const img = card.querySelector('img').src;
 
-    // Adiciona ao array e salva
     carrinhoItens.push({ nome, precoTexto, img });
     localStorage.setItem('gamemania_carrinho', JSON.stringify(carrinhoItens));
 
-    // Atualiza a interface
     atualizarVisualizacaoCarrinho();
     abrirCarrinho(null);
 }
 
 function removerItem(index) {
-    carrinhoItens.splice(index, 1); // Remove o item pelo índice
-    localStorage.setItem('gamemania_carrinho', JSON.stringify(carrinhoItens)); // Salva
+    carrinhoItens.splice(index, 1);
+    localStorage.setItem('gamemania_carrinho', JSON.stringify(carrinhoItens));
+    atualizarVisualizacaoCarrinho();
     
-    atualizarVisualizacaoCarrinho(); // Atualiza Sidebar
-    
-    // Se estiver na página de checkout, atualiza ela também
     if(document.getElementById("checkout-resumo-container")) {
         renderizarPaginaCheckout();
     }
@@ -141,7 +128,6 @@ function atualizarVisualizacaoCarrinho() {
         containerTotal.innerText = formatarMoeda(total);
     }
 
-    // Configura o botão de "Finalizar Compra" do sidebar
     const btnFinalizar = document.querySelector('.cart-footer button');
     if(btnFinalizar) {
         btnFinalizar.onclick = () => window.location.href = 'checkout.html';
@@ -149,19 +135,17 @@ function atualizarVisualizacaoCarrinho() {
 }
 
 // ==========================================================================
-// 4. LÓGICA DE FILTROS (Páginas de Categoria)
+// 4. LÓGICA DE FILTROS
 // ==========================================================================
 function filtrarProdutos(categoria, botaoClicado) {
     const produtos = document.querySelectorAll('.product-col');
     const botoes = document.querySelectorAll('.btn-filter');
 
-    // Atualiza visual dos botões (active)
     if(botoes.length > 0 && botaoClicado) {
         botoes.forEach(btn => btn.classList.remove('active'));
         botaoClicado.classList.add('active');
     }
 
-    // Lógica de esconder/mostrar
     produtos.forEach(produto => {
         const categoriaProduto = produto.getAttribute('data-categoria');
         if (categoria === 'todos') {
@@ -177,7 +161,7 @@ function filtrarProdutos(categoria, botaoClicado) {
 }
 
 // ==========================================================================
-// 5. LÓGICA ESPECÍFICA DO CHECKOUT (Página de Pagamento)
+// 5. LÓGICA DO CHECKOUT
 // ==========================================================================
 function renderizarPaginaCheckout() {
     const container = document.getElementById("checkout-lista-itens");
@@ -203,7 +187,91 @@ function renderizarPaginaCheckout() {
         `;
     });
 
-    // Atualiza os valores na tela
     if(subtotalEl) subtotalEl.innerText = formatarMoeda(total);
     if(totalEl) totalEl.innerText = formatarMoeda(total);
+}
+
+// ==========================================================================
+// 6. RELÓGIO DE OFERTAS
+// ==========================================================================
+function iniciarContagemRegressiva(duracaoSegundos) {
+    let timer = duracaoSegundos, horas, minutos, segundos;
+    const display = document.getElementById('countdown-timer');
+    if(!display) return;
+
+    setInterval(function () {
+        horas = parseInt(timer / 3600, 10);
+        minutos = parseInt((timer % 3600) / 60, 10);
+        segundos = parseInt(timer % 60, 10);
+        horas = horas < 10 ? "0" + horas : horas;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+        display.textContent = horas + " : " + minutos + " : " + segundos;
+        if (--timer < 0) timer = duracaoSegundos; 
+    }, 1000);
+}
+
+// ==========================================================================
+// 7. LÓGICA DO ROBÔ GAMEMANIA (HOVER EFFECT)
+// ==========================================================================
+function inicializarRoboGamer() {
+    // Ícone do Robô Gamer
+    const roboImgUrl = "https://cdn-icons-png.flaticon.com/512/8654/8654193.png"; 
+    
+    // 1. Deteção da Página Atual
+    const caminho = window.location.pathname.toLowerCase(); 
+    let mensagemTexto = "Psst! Procurando o melhor setup? 🎮"; 
+
+    if (caminho.includes("checkout")) {
+        mensagemTexto = "Dúvidas no pagamento? Posso ajudar! 💳";
+    } else if (caminho.includes("carrinho") || caminho.includes("cart")) {
+        mensagemTexto = "Ótimas escolhas! Falta pouco para o nível máximo. 🚀";
+    } else if (caminho.includes("login") || caminho.includes("entrar")) {
+        mensagemTexto = "Esqueceu a senha? Vamos resolver. 🔐";
+    } else if (caminho.includes("produto")) {
+        mensagemTexto = "Essa peça é uma máquina! Quer ver as specs? 🔧";
+    }
+
+    const container = document.createElement('div');
+    container.className = 'robo-container';
+    
+    // HTML (Sem onclick na imagem)
+    container.innerHTML = `
+        <div class="robo-balao" id="robo-msg" style="display: none;">
+            <button class="robo-fechar" onclick="fecharBalao(event)">X</button>
+            <span id="robo-texto">${mensagemTexto}</span>
+            <br>
+            <a href="#" onclick="abrirWhatsappAjuda()" style="color: blue; text-decoration: underline; font-weight: bold; font-size: 0.85rem;">
+                Falar com Especialista
+            </a>
+        </div>
+        <img src="${roboImgUrl}" class="robo-avatar" alt="Robô Ajuda">
+    `;
+
+    // 2. EVENTOS DE HOVER (MOUSE)
+    // Usamos o container para que o balão não feche se o mouse for da imagem para o texto
+    container.onmouseenter = function() {
+        const balao = document.getElementById('robo-msg');
+        if(balao) balao.style.display = 'block';
+    };
+
+    container.onmouseleave = function() {
+        const balao = document.getElementById('robo-msg');
+        if(balao) balao.style.display = 'none';
+    };
+
+    document.body.appendChild(container);
+}
+
+// Funções Auxiliares
+function fecharBalao(e) {
+    if(e) e.stopPropagation(); 
+    const balao = document.getElementById('robo-msg');
+    if(balao) balao.style.display = 'none';
+}
+
+function abrirWhatsappAjuda() {
+    const numero = "5537998296855"; 
+    const mensagem = "Olá! Estou na loja Gamemania e tenho uma dúvida.";
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
 }
