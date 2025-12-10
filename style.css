@@ -111,10 +111,10 @@ hr {
 .text-muted-light { color: #b0b3c6; font-size: 0.75rem; display: block; line-height: 1; }
 
 /* ==========================================================================
-   ELEMENTOS DE PRODUTOS E LAYOUT
+   ELEMENTOS DE PRODUTOS E LAYOUT (CORRIGIDO)
    ========================================================================== */
 
-/* Cards de Produto - Ajustados para evitar espaços em branco */
+/* Estilo Base do Card (Comum a todos) */
 .product-card { 
     border: 1px solid #e0e0e0; 
     border-radius: 8px; 
@@ -124,7 +124,14 @@ hr {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
     position: relative; 
     overflow: hidden;
-    /* Flexbox para alinhar conteúdo e rodapé do card */
+}
+
+/* CORREÇÃO IMPORTANTE: 
+   Aplica o layout Flexbox Vertical (Column) APENAS quando o elemento 
+   também possui a classe .card (ou seja, nos itens da grade de produtos).
+   Isso evita quebrar o layout da página de detalhes do produto.
+*/
+.product-card.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -133,7 +140,7 @@ hr {
 
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
-/* Imagem com altura fixa */
+/* Imagem com altura fixa (apenas para cards de listagem) */
 .product-img { 
     height: 180px; 
     object-fit: contain; 
@@ -149,7 +156,7 @@ hr {
     font-weight: 500; 
     color: #333; 
     margin-bottom: 8px; 
-    min-height: 40px;
+    min-height: 42px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -222,7 +229,7 @@ hr {
 .offcanvas-header { border-bottom: 1px solid rgba(255,255,255,0.1); }
 .btn-close-white { filter: invert(1); }
 
-/* Detalhes do Produto */
+/* Detalhes do Produto (Para página interna) */
 .product-detail-img { border: 1px solid #eee; padding: 10px; background-color: #fff; width: 100%; height: auto; object-fit: contain; max-height: 500px; }
 .gallery-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid transparent; opacity: 0.6; transition: all 0.3s ease; cursor: pointer; }
 .gallery-thumb:hover, .gallery-thumb.active { opacity: 1; border-color: var(--brand-purple); transform: translateY(-2px); }
