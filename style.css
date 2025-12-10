@@ -111,10 +111,10 @@ hr {
 .text-muted-light { color: #b0b3c6; font-size: 0.75rem; display: block; line-height: 1; }
 
 /* ==========================================================================
-   ELEMENTOS DE PRODUTOS E LAYOUT (ATUALIZADO PARA CORREÇÃO DE ESPAÇOS)
+   ELEMENTOS DE PRODUTOS E LAYOUT
    ========================================================================== */
 
-/* Cards de Produto - Agora Flexíveis */
+/* Cards de Produto - Ajustados para evitar espaços em branco */
 .product-card { 
     border: 1px solid #e0e0e0; 
     border-radius: 8px; 
@@ -124,7 +124,7 @@ hr {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
     position: relative; 
     overflow: hidden;
-    /* Ajuste Flexbox para alinhar conteúdo e remover espaços em branco */
+    /* Flexbox para alinhar conteúdo e rodapé do card */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -133,7 +133,7 @@ hr {
 
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
-/* Imagem com altura reduzida e fixa */
+/* Imagem com altura fixa */
 .product-img { 
     height: 180px; 
     object-fit: contain; 
@@ -143,16 +143,15 @@ hr {
     border-bottom: none; 
 }
 
-/* Nome do produto com limite de 2 linhas */
+/* Nome do produto (max 2 linhas) */
 .product-name { 
     font-size: 0.95rem; 
     font-weight: 500; 
     color: #333; 
     margin-bottom: 8px; 
-    /* Lógica para cortar texto grande */
-    min-height: 42px;
+    min-height: 40px;
     display: -webkit-box;
-    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: normal;
@@ -161,7 +160,7 @@ hr {
 .product-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
 .product-link:hover .product-name { color: var(--brand-purple); transition: color 0.3s ease; }
 
-/* Corpo do card para empurrar botão para baixo */
+/* Corpo do card flexível */
 .card-body {
     flex-grow: 1;
     display: flex;
@@ -249,7 +248,7 @@ hr {
    PÁGINAS INSTITUCIONAIS (Quem Somos, Fale Conosco, etc.)
    ========================================================================== */
 
-/* Títulos com sublinhado verde */
+/* Títulos */
 .section-title { font-weight: 800; color: var(--dark-blue); display: inline-block; padding-right: 20px; position: relative; }
 .section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--neon-green); margin-top: 8px; border-radius: 2px; }
 
@@ -368,35 +367,20 @@ hr {
 
 /* Container do item de menu */
 .nav-item-custom {
-    position: relative; /* Necessário para posicionar o menu filho */
-    padding-bottom: 10px; /* Cria uma área "invisível" para o mouse não escapar */
-    margin-bottom: -10px; /* Compensa o padding acima */
+    position: relative; padding-bottom: 10px; margin-bottom: -10px; 
 }
 
 /* O Menu Escondido */
 .mega-menu {
-    display: none; /* Escondido por padrão */
-    position: absolute;
-    top: 100%; /* Logo abaixo do link */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza em relação ao item */
-    background-color: rgba(3, 5, 26, 0.98); /* Fundo escuro quase opaco */
-    border: 1px solid var(--neon-green);
-    border-top: 3px solid var(--neon-green);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    z-index: 1000;
-    min-width: 400px; /* Largura mínima para ficar bonito */
-    border-radius: 0 0 8px 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease, margin-top 0.3s ease;
+    display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); 
+    background-color: rgba(3, 5, 26, 0.98); border: 1px solid var(--neon-green); border-top: 3px solid var(--neon-green); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); padding: 20px; z-index: 1000; min-width: 400px; 
+    border-radius: 0 0 8px 8px; opacity: 0; transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
 
-/* Ação de Hover (A Mágica) */
+/* Ação de Hover */
 .nav-item-custom:hover .mega-menu {
-    display: block;
-    opacity: 1;
-    animation: fadeInMenu 0.3s forwards;
+    display: block; opacity: 1; animation: fadeInMenu 0.3s forwards;
 }
 
 @keyframes fadeInMenu {
@@ -406,30 +390,17 @@ hr {
 
 /* Estilização interna do Mega Menu */
 .mega-title {
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 5px;
+    font-weight: 800; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 5px;
 }
 
-.mega-menu ul li {
-    margin-bottom: 5px;
-}
+.mega-menu ul li { margin-bottom: 5px; }
 
 .mega-menu ul li a {
-    color: #aab2cd;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-    display: block;
+    color: #aab2cd; text-decoration: none; font-size: 0.85rem; transition: all 0.2s; display: block;
 }
 
 .mega-menu ul li a:hover {
-    color: #fff;
-    padding-left: 5px; /* Efeito de deslizar */
-    color: var(--neon-green);
+    color: #fff; padding-left: 5px; color: var(--neon-green);
 }
 
 /* ==========================================================================
@@ -437,305 +408,102 @@ hr {
    ========================================================================== */
 
 /* Hero Carousel */
-.hero-carousel-img {
-    height: 450px;
-    object-fit: cover;
-    filter: brightness(0.8);
-}
+.hero-carousel-img { height: 450px; object-fit: cover; filter: brightness(0.8); }
 
-/* Responsividade do Banner para Celular */
 @media (max-width: 768px) {
-    .hero-carousel-img {
-        height: 250px; /* Altura reduzida para não ocupar a tela toda */
-    }
-    
-    /* Ajuste do banner promocional "Monte seu PC" */
-    .banner-promo-img {
-        min-height: 150px !important;
-        object-fit: cover;
-    }
-    
-    /* Círculos menores no celular */
-    .category-circle {
-        width: 70px !important;
-        height: 70px !important;
-        font-size: 1.5rem !important;
-    }
-    .cat-label {
-        font-size: 0.8rem !important;
-    }
+    .hero-carousel-img { height: 250px; }
+    .banner-promo-img { min-height: 150px !important; object-fit: cover; }
+    .category-circle { width: 70px !important; height: 70px !important; font-size: 1.5rem !important; }
+    .cat-label { font-size: 0.8rem !important; }
 }
 
-/* Ícones de Navegação Rápida (Círculos) */
+/* Ícones de Navegação Rápida */
 .category-circle {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: var(--dark-blue);
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    border: 3px solid transparent;
-    margin: 0 auto 10px;
+    width: 100px; height: 100px; background-color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    font-size: 2.5rem; color: var(--dark-blue); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border: 3px solid transparent; margin: 0 auto 10px;
 }
 
 .cat-item:hover .category-circle {
-    background-color: var(--dark-blue);
-    color: var(--neon-green);
-    transform: translateY(-10px);
-    border-color: var(--neon-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+    background-color: var(--dark-blue); color: var(--neon-green); transform: translateY(-10px); border-color: var(--neon-green); box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
 }
 
-.cat-label {
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
+.cat-label { font-weight: 700; color: #fff; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
+.cat-item:hover .cat-label { color: var(--neon-green); }
 
-.cat-item:hover .cat-label {
-    color: var(--neon-green);
-}
-
-/* Newsletter (Fundo Animado) */
+/* Newsletter */
 .newsletter-section {
-    background: linear-gradient(45deg, #020412, #0a1142);
-    border-top: 2px solid var(--neon-green);
-    border-bottom: 2px solid var(--neon-green);
-    padding: 60px 0;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(45deg, #020412, #0a1142); border-top: 2px solid var(--neon-green); border-bottom: 2px solid var(--neon-green); 
+    padding: 60px 0; position: relative; overflow: hidden;
 }
 
 .newsletter-section::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%); animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 /* Timer de Oferta */
 .countdown-box {
-    background: var(--dark-blue);
-    color: var(--neon-green);
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    border: 1px solid var(--neon-green);
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+    background: var(--dark-blue); color: var(--neon-green); padding: 5px 15px; border-radius: 5px; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 1.2rem; border: 1px solid var(--neon-green); box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
 }
 
 /* ==========================================================================
-   EFEITO HOVER NA LOGO (HEADER)
+   EFEITO HOVER NA LOGO
    ========================================================================== */
-
-/* Garante que a transição seja suave */
-.logo-hover .logo-img {
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform-origin: center center;
-}
-
-/* O efeito de Zoom ao passar o mouse */
-.logo-hover:hover .logo-img {
-    transform: scale(1.1); /* Aumenta 10% */
-    filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.3)); /* Leve brilho neon opcional */
-}
+.logo-hover .logo-img { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform-origin: center center; }
+.logo-hover:hover .logo-img { transform: scale(1.1); filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.3)); }
 
 /* ==========================================================================
-   BOTÕES DE CATEGORIA (Estilo Gamer Premium)
+   BOTÕES DE CATEGORIA
    ========================================================================== */
-
 .btn-category {
-    background: linear-gradient(135deg, #2e0050 0%, #4a0080 100%); /* Gradiente Roxo */
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px; /* Redondo */
-    padding: 8px 25px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    background: linear-gradient(135deg, #2e0050 0%, #4a0080 100%); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; 
+    padding: 8px 25px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; z-index: 1;
 }
 
-/* Efeito de brilho interno ao passar o mouse */
 .btn-category::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--neon-green) 0%, #32e010 100%); /* Fica Verde */
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--neon-green) 0%, #32e010 100%); z-index: -1; transition: opacity 0.3s ease; opacity: 0;
 }
 
-.btn-category:hover {
-    color: #000; /* Texto preto para contraste no verde */
-    transform: translateY(-3px); /* Sobe um pouco */
-    box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4); /* Sombra Neon */
-    border-color: transparent;
-}
+.btn-category:hover { color: #000; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4); border-color: transparent; }
+.btn-category:hover::before { opacity: 1; }
 
-.btn-category:hover::before {
-    opacity: 1; /* Revela o fundo verde */
-}
+/* ==========================================================================
+   ROBÔ GAMEMANIA
+   ========================================================================== */
+.robo-container { position: fixed; bottom: 20px; left: 20px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-start; font-family: 'Segoe UI', sans-serif; }
 
-/* ================= ROBÔ GAMEMANIA ================= */
-
-.robo-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px; /* MUDOU: Agora está na esquerda */
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* MUDOU: Alinha itens à esquerda */
-    font-family: 'Segoe UI', sans-serif;
-}
-
-/* Balão de fala */
 .robo-balao {
-    background: #fff;
-    color: #000;
-    padding: 10px 15px;
-    /* MUDOU: A pontinha do balão agora fica na esquerda embaixo (0) */
-    border-radius: 15px 15px 15px 0; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: aparecerBalao 0.5s forwards;
-    position: relative;
-    max-width: 200px;
-    text-align: left; /* Garante que o texto fique legível */
+    background: #fff; color: #000; padding: 10px 15px; border-radius: 15px 15px 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 10px; font-size: 0.9rem; opacity: 0; transform: translateY(10px); animation: aparecerBalao 0.5s forwards; position: relative; max-width: 200px; text-align: left;
 }
 
-/* ... Mantenha o restante (.robo-fechar, .robo-avatar, keyframes) igual ao anterior ... */
+.robo-fechar { position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
-/* Botão de fechar o balão */
-.robo-fechar {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.robo-avatar { width: 70px; height: 70px; cursor: pointer; animation: flutuar 3s ease-in-out infinite; transition: transform 0.3s; filter: drop-shadow(0 0 5px var(--neon-green, #0f0)); }
+.robo-avatar:hover { transform: scale(1.1); }
 
-/* O Robô (Imagem) */
-.robo-avatar {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
-    /* Animação de flutuar */
-    animation: flutuar 3s ease-in-out infinite;
-    transition: transform 0.3s;
-    filter: drop-shadow(0 0 5px var(--neon-green, #0f0)); /* Brilho Neon */
-}
-
-.robo-avatar:hover {
-    transform: scale(1.1);
-}
-
-/* Animações Keyframes */
-@keyframes flutuar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes aparecerBalao {
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes aparecerBalao { to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
    ESTILOS ESPECÍFICOS: PÁGINA DE CONSOLES E JOGOS
    ========================================================================== */
+.banner-sony { background: linear-gradient(90deg, #003087 0%, #000 100%); }
+.banner-xbox { background: linear-gradient(90deg, #107C10 0%, #000 100%); }
+.banner-nintendo { background: linear-gradient(90deg, #E60012 0%, #000 100%); }
 
-/* Cores de Fundo das Faixas de Marca */
-.banner-sony {
-    background: linear-gradient(90deg, #003087 0%, #000 100%);
-}
-
-.banner-xbox {
-    background: linear-gradient(90deg, #107C10 0%, #000 100%);
-}
-
-.banner-nintendo {
-    background: linear-gradient(90deg, #E60012 0%, #000 100%);
-}
-
-/* Botão "Ver Todos os Jogos" (Branco, dentro das faixas) */
 .btn-ver-jogos {
-    background-color: #fff;
-    color: #000;
-    border-radius: 50px;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 8px 20px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    border: 2px solid transparent;
-    white-space: nowrap; /* Evita quebra de linha em telas pequenas */
-    margin-top: 10px;    /* Espaçamento em telas menores */
+    background-color: #fff; color: #000; border-radius: 50px; font-weight: 800; text-transform: uppercase; padding: 8px 20px; text-decoration: none; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 5px; border: 2px solid transparent; white-space: nowrap; margin-top: 10px;
 }
 
-/* Ajuste de margem para telas maiores (Desktop) */
-@media (min-width: 768px) {
-    .btn-ver-jogos {
-        margin-top: 0;
-    }
-}
+@media (min-width: 768px) { .btn-ver-jogos { margin-top: 0; } }
 
-.btn-ver-jogos:hover {
-    transform: scale(1.05);
-    color: #000;
-    background-color: #f0f0f0;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-}
+.btn-ver-jogos:hover { transform: scale(1.05); color: #000; background-color: #f0f0f0; box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
 
 /* ==========================================================================
    ESTILOS ESPECÍFICOS: PÁGINA DE DIVERSOS
    ========================================================================== */
-
-/* Gradiente Roxo/Azul para Funko */
-.banner-funko {
-    background: linear-gradient(90deg, #4b1248 0%, #000 100%);
-}
-
-/* Gradiente Laranja/Vermelho para Action Figures */
-.banner-action {
-    background: linear-gradient(90deg, #8a1c14 0%, #000 100%);
-}
-
-/* Gradiente Verde Tech para Gift Cards */
-.banner-gift {
-    background: linear-gradient(90deg, #0f5c2e 0%, #000 100%);
-}
+.banner-funko { background: linear-gradient(90deg, #4b1248 0%, #000 100%); }
+.banner-action { background: linear-gradient(90deg, #8a1c14 0%, #000 100%); }
+.banner-gift { background: linear-gradient(90deg, #0f5c2e 0%, #000 100%); }

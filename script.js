@@ -1,21 +1,21 @@
 // ==========================================================================
 // ARQUIVO: script.js
-// DESCRIÇÃO: Lógica principal do site Game Mania (Carrinho, Filtros, UI)
+// DESCRIÇÃO: Lógica principal do site Game Mania (Carrinho, Filtros, UI, Checkout)
 // ==========================================================================
 
 // ==========================================================================
 // 1. VARIÁVEIS GLOBAIS E UTILITÁRIOS
 // ==========================================================================
 
-// Recupera o carrinho do LocalStorage ou cria um array vazio se não existir
+// Recupera o carrinho do LocalStorage ou cria um array vazio se for a primeira vez
 let carrinhoItens = JSON.parse(localStorage.getItem('gamemania_carrinho')) || [];
 
 /**
  * Converte uma string de preço (ex: "R$ 1.200,90") para um número float (1200.90)
+ * Remove 'R$', espaços, pontos de milhar e troca vírgula por ponto.
  */
 function converterPrecoParaNumero(textoPreco) {
     if (!textoPreco) return 0;
-    // Remove "R$", remove pontos de milhar e troca vírgula decimal por ponto
     let limpo = textoPreco.replace('R$', '').replaceAll('.', '').replace(',', '.').trim();
     return parseFloat(limpo) || 0;
 }
@@ -28,17 +28,21 @@ function formatarMoeda(valor) {
 }
 
 /**
- * Carrega componentes HTML externos (Header, Footer, Sidebar) dinamicamente
+ * Carrega componentes HTML externos (Header, Footer, Sidebar) dinamicamente.
+ * Isso evita repetir código HTML em todas as páginas.
  */
 async function loadComponent(elementId, filePath) {
     try {
         const response = await fetch(filePath);
         if (!response.ok) throw new Error(`Erro ao carregar ${filePath}`);
+        
         const data = await response.text();
         const element = document.getElementById(elementId);
+        
         if(element) {
             element.innerHTML = data;
-            // Se for o carrinho, atualiza os itens visuais logo após carregar
+            
+            // Se o componente carregado for o carrinho, atualiza a lista visual imediatamente
             if(elementId === "cart-sidebar-container") {
                 atualizarVisualizacaoCarrinho();
             }
@@ -53,26 +57,26 @@ async function loadComponent(elementId, filePath) {
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", async () => {
     
-    // Carrega Header e Footer em todas as páginas
+    // 1. Carrega Header e Footer em todas as páginas
     await loadComponent("header-target", "header.html");
     await loadComponent("footer-target", "footer.html");
     
-    // Carrega a Sidebar do Carrinho se o container existir
+    // 2. Carrega a Sidebar do Carrinho (se o container existir na página)
     if(document.getElementById("cart-sidebar-container")) {
         await loadComponent("cart-sidebar-container", "cart_sidebar.html");
     }
 
-    // Inicializa lógica da página de Checkout
+    // 3. Inicializa lógica da página de Checkout (se estiver nela)
     if(document.getElementById("checkout-resumo-container")) {
         renderizarPaginaCheckout();
     }
 
-    // Inicializa Contagem Regressiva (se houver o elemento)
+    // 4. Inicializa Contagem Regressiva (se houver o elemento de timer)
     if(document.getElementById("countdown-timer")) {
         iniciarContagemRegressiva(5 * 60 * 60); // 5 horas em segundos
     }
 
-    // Inicializa o Mascote/Robô de Ajuda
+    // 5. Inicializa o Mascote/Robô de Ajuda
     inicializarRoboGamer();
 });
 
@@ -81,44 +85,45 @@ document.addEventListener("DOMContentLoaded", async () => {
 // ==========================================================================
 
 /**
- * Abre o menu lateral (Offcanvas) do carrinho
+ * Abre o menu lateral (Offcanvas) do carrinho usando a API do Bootstrap
  */
 function abrirCarrinho(e) {
-    if(e) e.preventDefault();
+    if(e) e.preventDefault(); // Previne comportamento padrão se for link
     const offcanvasElement = document.getElementById('offcanvasCarrinho');
     if (offcanvasElement) {
-        // Usa a API do Bootstrap para mostrar o offcanvas
         const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
         bsOffcanvas.show();
     }
 }
 
 /**
- * Adiciona um produto ao carrinho baseado no botão clicado
+ * Adiciona um produto ao carrinho baseado no botão clicado.
+ * Busca as informações do Card pai do botão.
  */
 function adicionarAoCarrinho(botao) {
     // Encontra o card pai do botão clicado para pegar os dados
     const card = botao.closest('.product-card'); 
     
+    // Extrai dados do HTML
     const nome = card.querySelector('.product-name').innerText;
     const precoElement = card.querySelector('.product-price-new');
     const precoTexto = precoElement ? precoElement.innerText : 'R$ 0,00';
     const img = card.querySelector('img').src;
 
-    // Adiciona ao array e salva no navegador
+    // Adiciona ao array e salva no LocalStorage do navegador
     carrinhoItens.push({ nome, precoTexto, img });
     localStorage.setItem('gamemania_carrinho', JSON.stringify(carrinhoItens));
 
-    // Atualiza a UI e abre o carrinho para feedback imediato
+    // Atualiza a UI e abre o carrinho para dar feedback ao usuário
     atualizarVisualizacaoCarrinho();
     abrirCarrinho(null);
 }
 
 /**
- * Remove um item do carrinho pelo índice
+ * Remove um item do carrinho pelo índice do array
  */
 function removerItem(index) {
-    carrinhoItens.splice(index, 1);
+    carrinhoItens.splice(index, 1); // Remove 1 item na posição index
     localStorage.setItem('gamemania_carrinho', JSON.stringify(carrinhoItens));
     
     atualizarVisualizacaoCarrinho();
@@ -130,13 +135,13 @@ function removerItem(index) {
 }
 
 /**
- * Renderiza a lista de itens dentro da Sidebar do Carrinho
+ * Renderiza o HTML da lista de itens dentro da Sidebar do Carrinho
  */
 function atualizarVisualizacaoCarrinho() {
     const containerItens = document.getElementById('lista-itens-carrinho');
     const containerTotal = document.getElementById('preco-total-carrinho');
     
-    // Se o HTML do carrinho ainda não carregou, para a execução
+    // Se o HTML do carrinho ainda não carregou, para a execução para não dar erro
     if(!containerItens) return;
 
     containerItens.innerHTML = '';
@@ -169,7 +174,7 @@ function atualizarVisualizacaoCarrinho() {
         containerTotal.innerText = formatarMoeda(total);
     }
 
-    // Configura o botão de "Finalizar Compra"
+    // Configura o botão de "Finalizar Compra" para levar ao checkout
     const btnFinalizar = document.querySelector('.cart-footer button');
     if(btnFinalizar) {
         btnFinalizar.onclick = () => window.location.href = 'checkout.html';
@@ -181,7 +186,7 @@ function atualizarVisualizacaoCarrinho() {
 // ==========================================================================
 
 /**
- * Filtro Genérico para Produtos (Hardware, Notebooks, etc)
+ * Filtro para Página de Hardware/Periféricos (Usa classe .product-col)
  */
 function filtrarProdutos(categoria, botaoClicado) {
     const produtos = document.querySelectorAll('.product-col');
@@ -210,7 +215,7 @@ function filtrarProdutos(categoria, botaoClicado) {
 }
 
 /**
- * Filtro Específico para a Página de Jogos (PlayStation, Xbox, etc)
+ * Filtro para Página de Jogos (Usa classe .game-col e atributo data-plataforma)
  */
 function filtrarJogos(plataforma, botaoClicado) {
     const jogos = document.querySelectorAll('.game-col');
@@ -222,7 +227,7 @@ function filtrarJogos(plataforma, botaoClicado) {
         botaoClicado.classList.add('active');
     }
     
-    // Filtrar cards baseado no atributo data-plataforma
+    // Filtrar cards
     jogos.forEach(jogo => {
         const plat = jogo.getAttribute('data-plataforma');
         if (plataforma === 'todos' || plat === plataforma) {
@@ -237,6 +242,9 @@ function filtrarJogos(plataforma, botaoClicado) {
 // 5. LÓGICA DA PÁGINA DE CHECKOUT
 // ==========================================================================
 
+/**
+ * Renderiza o resumo do pedido na página checkout.html (estático, sem botões de remover)
+ */
 function renderizarPaginaCheckout() {
     const container = document.getElementById("checkout-lista-itens");
     const subtotalEl = document.getElementById("checkout-subtotal");
@@ -280,7 +288,7 @@ function iniciarContagemRegressiva(duracaoSegundos) {
         minutos = parseInt((timer % 3600) / 60, 10);
         segundos = parseInt(timer % 60, 10);
 
-        // Adiciona o zero à esquerda se for menor que 10
+        // Formatação com zero à esquerda
         horas = horas < 10 ? "0" + horas : horas;
         minutos = minutos < 10 ? "0" + minutos : minutos;
         segundos = segundos < 10 ? "0" + segundos : segundos;
@@ -288,7 +296,7 @@ function iniciarContagemRegressiva(duracaoSegundos) {
         display.textContent = horas + " : " + minutos + " : " + segundos;
 
         if (--timer < 0) {
-            timer = duracaoSegundos; // Reinicia o timer se acabar
+            timer = duracaoSegundos; // Reinicia o loop se acabar
         }
     }, 1000);
 }
@@ -298,10 +306,9 @@ function iniciarContagemRegressiva(duracaoSegundos) {
 // ==========================================================================
 
 function inicializarRoboGamer() {
-    // Ícone do Robô Gamer
     const roboImgUrl = "https://cdn-icons-png.flaticon.com/512/8654/8654193.png"; 
     
-    // 1. Deteção da Página Atual para personalizar mensagem
+    // Detecta qual página o usuário está para mandar a mensagem certa
     const caminho = window.location.pathname.toLowerCase(); 
     let mensagemTexto = "Psst! Procurando o melhor setup? 🎮"; 
 
@@ -315,11 +322,9 @@ function inicializarRoboGamer() {
         mensagemTexto = "Essa peça é uma máquina! Quer ver as specs? 🔧";
     }
 
-    // Cria o container do robô dinamicamente
     const container = document.createElement('div');
     container.className = 'robo-container';
     
-    // HTML interno do Robô e Balão
     container.innerHTML = `
         <div class="robo-balao" id="robo-msg" style="display: none;">
             <button class="robo-fechar" onclick="fecharBalao(event)">X</button>
@@ -332,14 +337,13 @@ function inicializarRoboGamer() {
         <img src="${roboImgUrl}" class="robo-avatar" alt="Robô Ajuda">
     `;
 
-    // 2. EVENTOS DE HOVER (MOUSE)
-    // Mostra o balão ao passar o mouse sobre a área do robô
+    // Mostra balão no hover
     container.onmouseenter = function() {
         const balao = document.getElementById('robo-msg');
         if(balao) balao.style.display = 'block';
     };
 
-    // Esconde o balão ao tirar o mouse
+    // Esconde balão ao sair
     container.onmouseleave = function() {
         const balao = document.getElementById('robo-msg');
         if(balao) balao.style.display = 'none';
@@ -348,14 +352,12 @@ function inicializarRoboGamer() {
     document.body.appendChild(container);
 }
 
-// Fecha o balão manualmente
 function fecharBalao(e) {
     if(e) e.stopPropagation(); 
     const balao = document.getElementById('robo-msg');
     if(balao) balao.style.display = 'none';
 }
 
-// Redireciona para o WhatsApp
 function abrirWhatsappAjuda() {
     const numero = "5537998296855"; 
     const mensagem = "Olá! Estou na loja Gamemania e tenho uma dúvida.";
