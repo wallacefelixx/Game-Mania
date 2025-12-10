@@ -363,3 +363,92 @@ function abrirWhatsappAjuda() {
     const mensagem = "Olá! Estou na loja Gamemania e tenho uma dúvida.";
     window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
 }
+
+// ==========================================================================
+// 8. LÓGICA DE BUSCA (SEARCH ENGINE)
+// ==========================================================================
+
+// BANCO DE DADOS DE PRODUTOS (Adicione todos os seus produtos aqui)
+const dbProdutos = [
+    { nome: "PlayStation 5 Slim", preco: "R$ 3.799,90", img: "https://images.kabum.com.br/produtos/fotos/496229/console-playstation-5-slim-edicao-digital-com-2-jogos-controle-sem-fio-dualsense-branco-1tb-ssd- CFI-2014-B01X_1701349883_gg.jpg", link: "ps5.html", categoria: "console" },
+    { nome: "Xbox Series X", preco: "R$ 4.299,90", img: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6c1642648bf.png?n=XBX_A-BuyBoxBGImage01-D.png", link: "xbox.html", categoria: "console" },
+    { nome: "Nintendo Switch OLED", preco: "R$ 2.199,90", img: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.0/c_scale,w_800/ncom/en_US/switch/site-design-update/hardware/switch/gallery/gallery01", link: "nintendo-switch.html", categoria: "console" },
+    { nome: "Notebook Gamer Acer Predator", preco: "R$ 8.999,90", img: "https://images4.kabum.com.br/produtos/fotos/sync_mirakl/677554/xlarge/Notebook-Acer-Predator-Phn16-72-99my-Intel-Ci9-14900hx-14-Gen-32gb-1TB-SSD-RTX-4070-W11-Home-NH-QTVAL-002_1762352017.png", link: "acer-predator-helios.html", categoria: "pc" },
+    { nome: "Funko Pop! Batman", preco: "R$ 119,90", img: "https://http2.mlstatic.com/D_NQ_NP_2X_781225-MLA97783777990_112025-F.webp", link: "diversos.html", categoria: "diversos" },
+    { nome: "Microfone Shure SM7B", preco: "R$ 2.999,00", img: "https://products.shureweb.eu/cdn-cgi/image/width=1380,height=1380,format=auto/shure_product_db/product_main_images/files/7e1/bf6/ed-/original/721ed7ee412b45897688a7b5acdefa44.webp", link: "mic_shure_sm7b.html", categoria: "perifericos" }
+    // ... Adicione mais produtos conforme necessário
+];
+
+/**
+ * Função chamada ao submeter o formulário do Header
+ */
+function realizarBusca(event) {
+    event.preventDefault(); // Impede a página de recarregar
+    const termo = document.getElementById('termo-busca').value.trim();
+    
+    if (termo) {
+        // Redireciona para a página de busca com o termo na URL
+        window.location.href = `busca.html?q=${encodeURIComponent(termo)}`;
+    }
+}
+
+/**
+ * Função executada apenas na página busca.html para renderizar resultados
+ */
+function carregarResultadosNaPagina() {
+    const params = new URLSearchParams(window.location.search);
+    const termo = params.get('q');
+    const container = document.getElementById('resultados-busca');
+    const tituloBusca = document.getElementById('titulo-busca');
+
+    if (!container || !termo) return;
+
+    tituloBusca.innerText = `Resultados para: "${termo}"`;
+    container.innerHTML = '';
+
+    // Filtra os produtos (busca case-insensitive)
+    const resultados = dbProdutos.filter(p => 
+        p.nome.toLowerCase().includes(termo.toLowerCase()) || 
+        p.categoria.toLowerCase().includes(termo.toLowerCase())
+    );
+
+    if (resultados.length === 0) {
+        container.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-emoji-frown display-1 text-muted"></i>
+                <h3 class="mt-3 text-muted">Nenhum produto encontrado.</h3>
+                <p>Tente buscar por termos mais genéricos como "PS5", "Xbox" ou "Funko".</p>
+                <a href="index.html" class="btn btn-comprar px-4 mt-3" style="width:auto">Voltar para Home</a>
+            </div>
+        `;
+        return;
+    }
+
+    // Renderiza os cards encontrados
+    resultados.forEach(produto => {
+        const html = `
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-card card h-100">
+                    <a href="${produto.link}" class="product-link text-center">
+                        <img src="${produto.img}" class="product-img" alt="${produto.nome}">
+                    </a>
+                    <div class="card-body p-0 text-center">
+                        <a href="${produto.link}" class="product-link">
+                            <h5 class="product-name">${produto.nome}</h5>
+                        </a>
+                        <div class="price-container">
+                            <span class="product-price-new">${produto.preco}</span>
+                        </div>
+                        <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += html;
+    });
+}
+
+// Verifica se está na página de busca e carrega os resultados
+if (window.location.pathname.includes('busca.html')) {
+    document.addEventListener("DOMContentLoaded", carregarResultadosNaPagina);
+}
