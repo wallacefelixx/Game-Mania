@@ -1,247 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Mania - Consoles</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
 
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="cart-sidebar-container"></div>
     <header id="header-target"></header>
 
     <main class="mb-5">
-        
-        <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">Consoles</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html" class="text-decoration-none text-muted"
+                >Home</a
+              >
+            </li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Consoles
+            </li>
+          </ol>
+        </nav>
+      </div>
 
-        <div class="container mt-4 mb-5">
-            <div class="row g-4">
-                <div class="col-12 col-md-6">
-                    <div class="banner-double rounded shadow">
-                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368880/xboxbanner2_ahrkob.png" alt="Lançamentos" class="img-fluid w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="banner-double rounded shadow">
-                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368874/steamdeck_m3epgl.webp" alt="Promoções" class="img-fluid w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
+      <div class="container mt-4 mb-5">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <div class="banner-double rounded shadow">
+              <img
+                src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368880/xboxbanner2_ahrkob.png"
+                alt="Lançamentos"
+                class="img-fluid w-100 h-100 object-fit-cover"
+              />
             </div>
-        </div>
-
-        <div class="container-fluid p-0 mb-4">
-            <div class="banner-perifericos banner-sony shadow d-flex align-items-center">
-                <div class="container h-100 d-flex align-items-center">
-                    <div class="banner-img-container me-4 d-none d-md-flex">
-                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368872/playstationbanner_jifmtv.webp" alt="PlayStation" class="banner-img" style="object-fit: contain;">
-                    </div>
-                    <div class="flex-grow-1 text-white py-3">
-                        <h2 class="m-0 banner-title mb-3">Universo PlayStation</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="btn btn-category">Jogos PS5</a>
-                            <a href="#" class="btn btn-category">Jogos PS4</a>
-                            <a href="#" class="btn btn-category">Gift Cards PSN</a>
-                            <a href="#" class="btn btn-category">Acessórios</a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="banner-double rounded shadow">
+              <img
+                src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368874/steamdeck_m3epgl.webp"
+                alt="Promoções"
+                class="img-fluid w-100 h-100 object-fit-cover"
+              />
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container-fluid p-0 mb-4">
-            <div class="banner-perifericos banner-xbox shadow d-flex align-items-center">
-                <div class="container h-100 d-flex align-items-center">
-                    <div class="banner-img-container me-4 d-none d-md-flex">
-                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368880/xboxbanner_u4nha9.webp" alt="Xbox" class="banner-img" style="object-fit: contain;">
-                    </div>
-                    <div class="flex-grow-1 text-white py-3">
-                        <h2 class="m-0 banner-title mb-3">Mundo Xbox</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="btn btn-category">Jogos Series X|S</a>
-                            <a href="#" class="btn btn-category">Jogos Xbox One</a>
-                            <a href="#" class="btn btn-category">Game Pass</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid p-0 mb-4">
+        <div
+          class="banner-perifericos banner-sony shadow d-flex align-items-center"
+        >
+          <div class="container h-100 d-flex align-items-center">
+            <div class="banner-img-container me-4 d-none d-md-flex">
+              <img
+                src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368872/playstationbanner_jifmtv.webp"
+                alt="PlayStation"
+                class="banner-img"
+                style="object-fit: contain"
+              />
             </div>
+            <div class="flex-grow-1 text-white py-3">
+              <h2 class="m-0 banner-title mb-3">Universo PlayStation</h2>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn btn-category">Jogos PS5</a>
+                <a href="#" class="btn btn-category">Jogos PS4</a>
+                <a href="#" class="btn btn-category">Gift Cards PSN</a>
+                <a href="#" class="btn btn-category">Acessórios</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container-fluid p-0 mb-5">
-            <div class="banner-perifericos banner-nintendo shadow d-flex align-items-center">
-                <div class="container h-100 d-flex align-items-center">
-                    <div class="banner-img-container me-4 d-none d-md-flex">
-                        <img src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368887/nintendobanner_o94krw.webp" alt="Nintendo" class="banner-img" style="object-fit: contain;">
-                    </div>
-                    <div class="flex-grow-1 text-white py-3">
-                        <h2 class="m-0 banner-title mb-3">Nintendo Switch</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="btn btn-category">Lançamentos Switch</a>
-                            <a href="#" class="btn btn-category">Jogos Mario</a>
-                            <a href="#" class="btn btn-category">Jogos Pokémon</a>
-                            <a href="#" class="btn btn-category">Amiibos</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid p-0 mb-4">
+        <div
+          class="banner-perifericos banner-xbox shadow d-flex align-items-center"
+        >
+          <div class="container h-100 d-flex align-items-center">
+            <div class="banner-img-container me-4 d-none d-md-flex">
+              <img
+                src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368880/xboxbanner_u4nha9.webp"
+                alt="Xbox"
+                class="banner-img"
+                style="object-fit: contain"
+              />
             </div>
+            <div class="flex-grow-1 text-white py-3">
+              <h2 class="m-0 banner-title mb-3">Mundo Xbox</h2>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn btn-category">Jogos Series X|S</a>
+                <a href="#" class="btn btn-category">Jogos Xbox One</a>
+                <a href="#" class="btn btn-category">Game Pass</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container text-center mb-4">
-            <div class="d-flex align-items-center justify-content-center">
-                <hr class="flex-grow-1 border-secondary" style="opacity: 1;">
-                <h3 class="mx-3 text-white fw-light">Jogos em Destaque</h3>
-                <hr class="flex-grow-1 border-secondary" style="opacity: 1;">
+      <div class="container-fluid p-0 mb-5">
+        <div
+          class="banner-perifericos banner-nintendo shadow d-flex align-items-center"
+        >
+          <div class="container h-100 d-flex align-items-center">
+            <div class="banner-img-container me-4 d-none d-md-flex">
+              <img
+                src="https://res.cloudinary.com/drkbrzpvn/image/upload/v1765368887/nintendobanner_o94krw.webp"
+                alt="Nintendo"
+                class="banner-img"
+                style="object-fit: contain"
+              />
             </div>
+            <div class="flex-grow-1 text-white py-3">
+              <h2 class="m-0 banner-title mb-3">Nintendo Switch</h2>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn btn-category">Lançamentos Switch</a>
+                <a href="#" class="btn btn-category">Jogos Mario</a>
+                <a href="#" class="btn btn-category">Jogos Pokémon</a>
+                <a href="#" class="btn btn-category">Amiibos</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container main-content-white mb-5">
-            <div class="row g-4 pt-3"> 
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/81qB80qHwDL._AC_SL1500_.jpg" class="product-img" alt="Spider Man 2">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">Marvel's Spider-Man 2 - PS5</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 349,90</span>
-                                <span class="product-price-new">R$ 299,90</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 59,98</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
+      <div class="container text-center mb-4">
+        <div class="d-flex align-items-center justify-content-center">
+          <hr class="flex-grow-1 border-secondary" style="opacity: 1" />
+          <h3 class="mx-3 text-white fw-light">Consoles em Destaque</h3>
+          <hr class="flex-grow-1 border-secondary" style="opacity: 1" />
+        </div>
+      </div>
+
+      <div class="container main-content-white mb-5">
+        <div class="row g-4 pt-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="https://cdn.awsli.com.br/600x450/1919/1919257/produto/317435706/ps5pro--10--z74jc64uxx.jpg"
+                  class="product-img"
+                  alt="Spider Man 2"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Console Playstation 5 Pro SSD 2TB - PS5 Pro Sony
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 6.699,90</span>
+                  <span class="product-price-new">R$ 6.236,90</span>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/61fVzB09mDL._AC_SL1000_.jpg" class="product-img" alt="Zelda Tears of the Kingdom">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">The Legend of Zelda: Tears of the Kingdom</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 399,90</span>
-                                <span class="product-price-new">R$ 329,90</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">6x</span> de <span class="installment-highlight">R$ 54,98</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/815T47-kSUL._AC_SL1500_.jpg" class="product-img" alt="Starfield">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">Starfield - Xbox Series X</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 349,90</span>
-                                <span class="product-price-new">R$ 199,90</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 66,63</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/81362+uR8QL._AC_SL1500_.jpg" class="product-img" alt="God of War Ragnarok">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">God of War Ragnarök - PS5</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 349,90</span>
-                                <span class="product-price-new">R$ 249,90</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">4x</span> de <span class="installment-highlight">R$ 62,47</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/811Q7F8+TlL._AC_SL1500_.jpg" class="product-img" alt="Mario Kart 8">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">Mario Kart 8 Deluxe</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 299,00</span>
-                                <span class="product-price-new">R$ 279,00</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 55,80</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-card card h-100">
-                        <a href="#" class="product-link">
-                            <img src="https://m.media-amazon.com/images/I/81t622Nsh+L._AC_SL1500_.jpg" class="product-img" alt="Forza Horizon 5">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center p-0">
-                            <a href="#" class="product-link">
-                                <h5 class="product-name">Forza Horizon 5 - Xbox</h5>
-                            </a>
-                            <div class="price-container">
-                                <span class="product-price-old">R$ 299,00</span>
-                                <span class="product-price-new">R$ 189,90</span>
-                            </div>
-                            <p class="product-installments">
-                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 63,30</span> <span class="installment-light">sem juros</span>
-                            </p>
-                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
-                        </div>
-                    </div>
-                </div>
-
+                <p class="product-installments">
+                  <span class="installment-highlight">12x</span> de
+                  <span class="installment-highlight">R$ 558,33</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
             </div>
-        </div> 
+          </div>
 
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="https://cdn.awsli.com.br/2500x2500/53/53761/produto/312721643/01-5irmxpqpev.jpg"
+                  class="product-img"
+                  alt="Zelda Tears of the Kingdom"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Console Xbox Series X 2TB Galaxy Black Special Edition
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 4.499,90</span>
+                  <span class="product-price-new">R$ 4.199,90</span>
+                </div>
+                <p class="product-installments">
+                  <span class="installment-highlight">10x</span> de
+                  <span class="installment-highlight">R$ 419,98</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  class="product-img"
+                  alt="Starfield"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Console Nintendo Switch 2 - Nintendo
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 3.899,99</span>
+                  <span class="product-price-new">R$ 3.860,99</span>
+                </div>
+                <p class="product-installments">
+                  <span class="installment-highlight">10x</span> de
+                  <span class="installment-highlight">R$ 380,63</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="https://m.media-amazon.com/images/I/51LyTT+q3WL._AC_SL1280_.jpg"
+                  class="product-img"
+                  alt="God of War Ragnarok"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Pack do console PlayStation®5 – Edição Limitada Ouro - Ghost
+                    of Yōtei
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 4.556,90</span>
+                  <span class="product-price-new">R$ 4.399,90</span>
+                </div>
+                <p class="product-installments">
+                  <span class="installment-highlight">10x</span> de
+                  <span class="installment-highlight">R$ 440,47</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="https://horizonplay.fbitsstatic.net/img/p/console-microsoft-xbox-series-x-1tb-all-digital-branco-152257/338860.jpg?w=670&h=670&v=202509011333"
+                  class="product-img"
+                  alt="Mario Kart 8"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Console Microsoft Xbox Series X 1TB All Digital - Branco
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 6.457,85</span>
+                  <span class="product-price-new">R$ 4.704,44</span>
+                </div>
+                <p class="product-installments">
+                  <span class="installment-highlight">12x</span> de
+                  <span class="installment-highlight">R$ 445,50</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card card h-100">
+              <a href="#" class="product-link">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  class="product-img"
+                  alt="Forza Horizon 5"
+                />
+              </a>
+              <div class="card-body d-flex flex-column text-center p-0">
+                <a href="#" class="product-link">
+                  <h5 class="product-name">
+                    Console Nintendo Switch OLED Edição Especial Pokemon Scarlet
+                    e Violet
+                  </h5>
+                </a>
+                <div class="price-container">
+                  <span class="product-price-old">R$ 2.999,99</span>
+                  <span class="product-price-new">R$ 2.969,99</span>
+                </div>
+                <p class="product-installments">
+                  <span class="installment-highlight">10x</span> de
+                  <span class="installment-highlight">R$ 300,30</span>
+                  <span class="installment-light">sem juros</span>
+                </p>
+                <button
+                  class="btn btn-comprar"
+                  onclick="adicionarAoCarrinho(this)"
+                >
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer id="footer-target"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
