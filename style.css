@@ -1,0 +1,629 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    /* --- Cores Globais --- */
+    --neon-green: #39ff14; /* Verde padrão do site */
+    --dark-blue: #03051a;  /* Azul escuro (navbar/fundo cards) */
+    --bg-dark: #00083F;    /* Azul marinho (background body) */
+    --search-bg: #f0f8ff;
+    --brand-purple: #2e0050; 
+    
+    /* --- Cores Específicas do Rodapé --- */
+    --footer-bg-top: #020412;
+    --footer-bg-bottom: #000000;
+    --footer-text-gray: #aab2cd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark); 
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   COMPONENTES E UTILITÁRIOS GERAIS
+   ========================================================================== */
+
+/* --- Caixa Central Branca (Conteúdo Principal) --- */
+.main-content-white {
+    background-color: #ffffff;
+    min-height: 100vh; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); 
+    margin-top: 0; 
+}
+
+hr {
+    border-color: rgba(255,255,255,0.2); 
+    margin-bottom: 0;
+}
+
+/* --- Scrollbar Personalizada --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0b0e21; }
+::-webkit-scrollbar-thumb { background-color: var(--neon-green); border-radius: 6px; border: 3px solid #0b0e21; }
+::-webkit-scrollbar-thumb:hover { background-color: #32e010; }
+
+/* --- Utilitários de Cor e Borda --- */
+.bg-custom-dark { background-color: var(--dark-blue); }
+.text-neon-green { color: var(--neon-green) !important; }
+.text-dark-blue { color: var(--dark-blue) !important; }
+.bg-neon { background-color: var(--neon-green); }
+.d-none-filter { display: none !important; }
+.border-light { border-color: #eee !important; }
+
+/* ==========================================================================
+   HEADER E NAVEGAÇÃO
+   ========================================================================== */
+.top-bar { 
+    background-color: var(--neon-green); 
+    color: #000; 
+    height: 40px; 
+    font-size: 0.9rem; 
+    letter-spacing: 1px; 
+}
+
+.logo-img { 
+    max-height: 90px; 
+    width: auto; 
+    display: block; 
+    transition: all 0.3s ease; 
+}
+
+/* Busca */
+.search-container { width: 100%; max-width: 500px; position: relative; }
+.search-input { border-radius: 5px; border: none; background-color: var(--search-bg); padding: 10px 40px 10px 15px; }
+.search-btn { position: absolute; right: 5px; top: 2px; border: none; background: transparent; color: var(--dark-blue); font-size: 1.2rem; }
+
+/* Ícones do Header */
+.header-icons a { color: #fff; font-size: 1.5rem; text-decoration: none; transition: color 0.3s ease; }
+.header-icons a:hover { color: var(--neon-green); }
+
+/* Barra de Categorias */
+.category-bar { padding: 10px 0; box-shadow: 0 4px 6px -6px #000; }
+.cat-link { 
+    color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin: 0 25px; 
+    text-transform: uppercase; position: relative; transition: color 0.3s ease; 
+}
+.cat-link:hover { color: var(--neon-green); }
+.cat-link::after { 
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; 
+    background-color: var(--neon-green); transition: width 0.3s ease; 
+}
+.cat-link:hover::after { width: 100%; }
+
+/* --- Barra de Benefícios --- */
+.benefits-bar { 
+    background: linear-gradient(90deg, #020412 0%, #0a1142 50%, #020412 100%); 
+    border-bottom: 1px solid #1a1a40; position: relative; width: 100%; min-height: 60px; 
+}
+.icon-neon { 
+    font-size: 1.6rem; color: var(--neon-green); 
+    filter: drop-shadow(0 0 3px rgba(57, 255, 20, 0.5)); transition: transform 0.3s ease; 
+}
+.benefit-item:hover .icon-neon { transform: scale(1.1); }
+.benefit-title { font-size: 1rem; line-height: 1; margin-bottom: 2px; }
+.text-muted-light { color: #b0b3c6; font-size: 0.75rem; display: block; line-height: 1; }
+
+/* ==========================================================================
+   ELEMENTOS DE PRODUTOS E LAYOUT
+   ========================================================================== */
+
+/* Cards de Produto */
+.product-card { 
+    border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fff; padding: 15px; 
+    transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    position: relative; overflow: hidden; 
+}
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.product-img { height: 200px; object-fit: contain; width: 100%; margin-bottom: 10px; padding: 0; border-bottom: none; }
+.product-name { font-size: 1rem; font-weight: 500; color: #333; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.product-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+.product-link:hover .product-name { color: var(--brand-purple); transition: color 0.3s ease; }
+
+/* Preços e Botões */
+.price-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px; }
+.product-price-old { text-decoration: line-through; color: var(--brand-purple); font-weight: 700; font-size: 0.9rem; margin: 0; }
+.product-price-new { color: #00c918; font-weight: 700; font-size: 1.2rem; margin: 0; }
+.product-installments { font-size: 0.9rem; color: var(--brand-purple); font-weight: 600; margin-bottom: 15px; }
+.installment-highlight { font-weight: 800; color: var(--brand-purple); }
+.installment-light { font-weight: 400; color: #888; font-size: 0.8rem; margin-left: 3px; }
+
+.btn-comprar { 
+    background-color: #050a30; color: #fff; width: 100%; padding: 10px 0; font-size: 0.95rem; 
+    border-radius: 8px; border: none; font-weight: 700; letter-spacing: 0.5px; 
+    text-transform: uppercase; box-shadow: 0 4px 6px rgba(0,0,0,0.2); margin-top: auto; 
+    transition: all 0.3s ease; 
+}
+.btn-comprar:hover { background-color: var(--neon-green); color: #000; box-shadow: 0 0 15px rgba(57, 255, 20, 0.6); transform: scale(1.02); }
+
+/* Filtros */
+.filter-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+.btn-filter { background-color: transparent; color: var(--brand-purple); border: 2px solid var(--brand-purple); border-radius: 50px; padding: 10px 30px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; }
+.btn-filter:hover, .btn-filter.active { background-color: var(--brand-purple); color: #fff; box-shadow: 0 0 15px rgba(46, 0, 80, 0.5); }
+
+/* Carrossel e Banners */
+.carousel-img { height: 500px; object-fit: cover; object-position: center; }
+.carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg); width: 2.5rem; height: 2.5rem; }
+.carousel-indicators .active { background-color: var(--neon-green); }
+.banner-double { overflow: hidden; height: 100%; transition: transform 0.3s ease; cursor: pointer; }
+.banner-double:hover { transform: scale(1.02); }
+
+.banner-perifericos {
+    background: linear-gradient(90deg, #103248 0%, #50a3b8 50%, #103248 100%);
+    border-top: 2px solid #fff; border-bottom: 2px solid #fff;
+    height: auto; min-height: 120px; overflow: hidden; position: relative;
+}
+.banner-img-container { height: 100%; min-height: 120px; background-color: #000; display: flex; align-items: center; width: fit-content; position: relative; }
+.banner-img-container::after { content: ''; position: absolute; top: 0; right: 0; width: 50px; height: 100%; background: linear-gradient(to right, transparent, #15384e); }
+.banner-img { height: 100%; width: auto; object-fit: cover; max-width: 350px; }
+.banner-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+/* ==========================================================================
+   PÁGINAS ESPECÍFICAS (Detalhes, Carrinho, Login)
+   ========================================================================== */
+
+/* Login */
+.login-card { background-color: #050a30; border: 1px solid var(--neon-green); margin-top: 50px; margin-bottom: 50px; }
+.input-gamer { background-color: #020412; border: 1px solid #333; color: #fff; }
+.input-gamer:focus { background-color: #020412; border-color: var(--neon-green); color: #fff; box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); }
+.input-gamer::placeholder { color: #666; }
+
+/* Carrinho Sidebar */
+.offcanvas { background-color: #00083F; border-left: 2px solid var(--neon-green); color: #fff; }
+.offcanvas-header { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.btn-close-white { filter: invert(1); }
+
+/* Detalhes do Produto */
+.product-detail-img { border: 1px solid #eee; padding: 10px; background-color: #fff; width: 100%; height: auto; object-fit: contain; max-height: 500px; }
+.gallery-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid transparent; opacity: 0.6; transition: all 0.3s ease; cursor: pointer; }
+.gallery-thumb:hover, .gallery-thumb.active { opacity: 1; border-color: var(--brand-purple); transform: translateY(-2px); }
+.related-products-title { color: var(--dark-blue); font-size: 1.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; margin-left: 15px; margin-right: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+
+/* Abas */
+.nav-tabs .nav-link { border: none; border-bottom: 3px solid transparent; color: #666; font-weight: 600; transition: all 0.3s ease; padding: 10px 20px; }
+.nav-tabs .nav-link.active { border-color: var(--brand-purple); color: var(--brand-purple) !important; background-color: transparent; }
+.nav-tabs .nav-link:hover { color: var(--brand-purple); border-color: transparent; }
+
+/* Avaliações */
+.review-item { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+.review-item:last-child { border-bottom: none; margin-bottom: 0; }
+.review-avatar { width: 40px; height: 40px; background-color: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555; }
+
+/* Breadcrumb */
+.breadcrumb-item a { color: #b0b3c6 !important; font-weight: 500; }
+.breadcrumb-item a:hover { color: var(--neon-green) !important; }
+.breadcrumb-item + .breadcrumb-item::before { color: rgba(255, 255, 255, 0.4) !important; }
+.breadcrumb-item.active { color: #fff !important; font-weight: 700; }
+
+/* ==========================================================================
+   PÁGINAS INSTITUCIONAIS (Quem Somos, Fale Conosco, etc.)
+   ========================================================================== */
+
+/* Títulos com sublinhado verde */
+.section-title { font-weight: 800; color: var(--dark-blue); display: inline-block; padding-right: 20px; position: relative; }
+.section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--neon-green); margin-top: 8px; border-radius: 2px; }
+
+.title-underline { position: relative; display: inline-block; padding-bottom: 5px; color: var(--dark-blue); }
+.title-underline::after { content: ''; display: block; width: 40%; height: 3px; background-color: var(--neon-green); margin-top: 5px; }
+
+/* Accordion (FAQ) */
+.accordion-item { border: 1px solid #e0e0e0; overflow: hidden; border-radius: 8px !important; }
+.accordion-button { font-weight: 600; color: #fff !important; background-color: var(--dark-blue) !important; box-shadow: none !important; }
+.accordion-button.collapsed { background-color: var(--dark-blue) !important; color: #fff !important; }
+.accordion-button:not(.collapsed) { background-color: var(--neon-green) !important; color: var(--dark-blue) !important; font-weight: 800; }
+.accordion-button::after { filter: invert(1); transition: all 0.3s ease; }
+.accordion-button:not(.collapsed)::after { filter: invert(0); }
+.accordion-body { color: #333; background-color: #f8f9fa; border-top: 1px solid var(--neon-green); }
+
+/* Contato */
+.contact-icon { color: var(--neon-green); transition: transform 0.2s; }
+.contact-item:hover .contact-icon { transform: scale(1.2); }
+
+/* Passos "Como Comprar" */
+.step-item { align-items: flex-start; }
+.step-icon { min-width: 50px; height: 50px; background-color: var(--dark-blue); color: var(--neon-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid var(--neon-green); transition: transform 0.3s ease; }
+.step-item:hover .step-icon { transform: scale(1.1) rotate(10deg); background-color: var(--neon-green); color: var(--dark-blue); }
+
+/* Pagamento (Cards com Efeito) */
+.payment-card { background-color: #f8f9fa; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid transparent !important; }
+.payment-card:hover { transform: translateY(-10px); background-color: #ffffff; box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--neon-green) !important; }
+.payment-card .icon-wrapper i { font-size: 3.5rem; color: var(--dark-blue); transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.payment-card:hover .icon-wrapper i { color: var(--neon-green); transform: scale(1.1); text-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+
+/* Hover Genérico */
+.hover-shadow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.hover-shadow:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; transform: translateY(-5px); background-color: #f8f9fa; }
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+.game-mania-footer { width: 100%; margin-top: auto; }
+.footer-top { background-color: var(--footer-bg-top); }
+.footer-title { color: #ffffff; font-weight: 800; font-size: 0.9rem; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.footer-list li { margin-bottom: 0.6rem; }
+.footer-list a { color: var(--footer-text-gray); text-decoration: none; font-size: 0.85rem; display: inline-block; transition: all 0.3s ease; }
+.footer-list a:hover { color: var(--neon-green); transform: translateX(5px); text-shadow: 0 0 5px rgba(57, 255, 20, 0.4); }
+
+/* Social */
+.footer-social { background-color: var(--neon-green); padding: 15px 0; width: 100%; }
+.footer-social .container { display: flex !important; justify-content: center !important; align-items: center !important; gap: 20px; }
+.footer-social span { color: #000000 !important; font-weight: 800; letter-spacing: 1px; font-size: 1rem; line-height: 1; }
+.social-icons { display: flex !important; gap: 15px; align-items: center; margin: 0; padding: 0; }
+.social-icons a { color: #000000 !important; font-size: 1.5rem; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, color 0.2s ease; }
+.social-icons a:hover { color: #ffffff !important; transform: scale(1.2); }
+
+/* Base */
+.footer-bottom { background-color: var(--footer-bg-bottom); }
+.footer-logo-img { height: 80px; width: auto; display: inline-block; transition: transform 0.3s ease; }
+.footer-logo-img:hover { transform: scale(1.1); }
+.text-copyright { color: #ffffff; font-size: 0.75rem; opacity: 0.8; }
+
+/* ==========================================================================
+   BANNERS E ANIMAÇÕES EXTRAS (After Effects Style)
+   ========================================================================== */
+.ae-banner { background: linear-gradient(90deg, #02051a 0%, #060e3d 50%, #02051a 100%); color: #fff; padding: 12px 0; overflow: hidden; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.ae-banner::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0) 100%); transform: skewX(-25deg); animation: shineEffect 6s infinite; pointer-events: none; }
+.ae-banner .banner-content { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+.ae-item { display: flex; align-items: center; gap: 12px; opacity: 0; transform: translateY(20px); animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; position: relative; padding: 5px 15px; transition: transform 0.3s ease; }
+.ae-item:hover { transform: scale(1.05); cursor: default; }
+.ae-item:nth-child(1) { animation-delay: 0.1s; }
+.ae-item:nth-child(2) { animation-delay: 0.3s; }
+.ae-item:nth-child(3) { animation-delay: 0.5s; }
+.ae-icon { font-size: 1.8rem; color: #00ff55; animation: neonPulse 3s infinite ease-in-out; text-shadow: 0 0 10px rgba(0, 255, 85, 0.4); }
+.ae-text { display: flex; flex-direction: column; line-height: 1.1; }
+.ae-title { font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.ae-subtitle { font-size: 0.75rem; color: #aeb5d6; font-weight: 400; }
+
+@keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+@keyframes neonPulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0, 255, 85, 0.3)); } 50% { transform: scale(1.08); filter: drop-shadow(0 0 12px rgba(0, 255, 85, 0.6)); } }
+@keyframes shineEffect { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+/* ==========================================================================
+   RESPONSIVIDADE GERAL
+   ========================================================================== */
+@media (min-width: 768px) { 
+    .border-desktop { border-left: 1px solid rgba(255, 255, 255, 0.1); border-right: 1px solid rgba(255, 255, 255, 0.1); height: 35px; } 
+}
+
+@media (max-width: 991px) {
+    .nav-link:hover { color: var(--neon-green) !important; }
+    .logo-img { max-height: 60px; }
+    .header-icons { justify-content: center !important; margin-top: 10px; }
+    .benefit-item { justify-content: flex-start !important; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .col-12:last-child .benefit-item { border-bottom: none; }
+    .carousel-img { height: 250px; }
+    .banner-perifericos { height: auto; flex-direction: column; padding-bottom: 15px; }
+    .banner-img-container { width: 100%; justify-content: center; background: transparent; }
+    .banner-img-container::after { display: none; }
+    .banner-title { font-size: 1.8rem; text-align: center; padding-left: 0 !important; margin-top: 10px; }
+}
+
+@media (max-width: 768px) {
+    .ae-banner .banner-content { flex-direction: column; gap: 15px; text-align: left; }
+    .ae-item { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 576px) {
+    .product-card { margin-bottom: 15px; }
+    .product-name { font-size: 0.85rem; }
+    .product-price-new { font-size: 1.0rem; }
+    .product-installments { font-size: 0.7rem; }
+    .btn-comprar { font-size: 0.8rem; padding: 6px 10px; }
+}
+
+/* ==========================================================================
+   MEGA MENU (Dropdown Hover)
+   ========================================================================== */
+
+/* Container do item de menu */
+.nav-item-custom {
+    position: relative; /* Necessário para posicionar o menu filho */
+    padding-bottom: 10px; /* Cria uma área "invisível" para o mouse não escapar */
+    margin-bottom: -10px; /* Compensa o padding acima */
+}
+
+/* O Menu Escondido */
+.mega-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 100%; /* Logo abaixo do link */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza em relação ao item */
+    background-color: rgba(3, 5, 26, 0.98); /* Fundo escuro quase opaco */
+    border: 1px solid var(--neon-green);
+    border-top: 3px solid var(--neon-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    z-index: 1000;
+    min-width: 400px; /* Largura mínima para ficar bonito */
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+/* Ação de Hover (A Mágica) */
+.nav-item-custom:hover .mega-menu {
+    display: block;
+    opacity: 1;
+    animation: fadeInMenu 0.3s forwards;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; margin-top: 10px; }
+    to { opacity: 1; margin-top: 0; }
+}
+
+/* Estilização interna do Mega Menu */
+.mega-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.mega-menu ul li {
+    margin-bottom: 5px;
+}
+
+.mega-menu ul li a {
+    color: #aab2cd;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    display: block;
+}
+
+.mega-menu ul li a:hover {
+    color: #fff;
+    padding-left: 5px; /* Efeito de deslizar */
+    color: var(--neon-green);
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA HOME PAGE (Responsivo)
+   ========================================================================== */
+
+/* Hero Carousel */
+.hero-carousel-img {
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+/* Responsividade do Banner para Celular */
+@media (max-width: 768px) {
+    .hero-carousel-img {
+        height: 250px; /* Altura reduzida para não ocupar a tela toda */
+    }
+    
+    /* Ajuste do banner promocional "Monte seu PC" */
+    .banner-promo-img {
+        min-height: 150px !important;
+        object-fit: cover;
+    }
+    
+    /* Círculos menores no celular */
+    .category-circle {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 1.5rem !important;
+    }
+    .cat-label {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Ícones de Navegação Rápida (Círculos) */
+.category-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid transparent;
+    margin: 0 auto 10px;
+}
+
+.cat-item:hover .category-circle {
+    background-color: var(--dark-blue);
+    color: var(--neon-green);
+    transform: translateY(-10px);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+.cat-label {
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.cat-item:hover .cat-label {
+    color: var(--neon-green);
+}
+
+/* Newsletter (Fundo Animado) */
+.newsletter-section {
+    background: linear-gradient(45deg, #020412, #0a1142);
+    border-top: 2px solid var(--neon-green);
+    border-bottom: 2px solid var(--neon-green);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Timer de Oferta */
+.countdown-box {
+    background: var(--dark-blue);
+    color: var(--neon-green);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+/* ==========================================================================
+   EFEITO HOVER NA LOGO (HEADER)
+   ========================================================================== */
+
+/* Garante que a transição seja suave */
+.logo-hover .logo-img {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+}
+
+/* O efeito de Zoom ao passar o mouse */
+.logo-hover:hover .logo-img {
+    transform: scale(1.1); /* Aumenta 10% */
+    filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.3)); /* Leve brilho neon opcional */
+}
+
+/* ==========================================================================
+   BOTÕES DE CATEGORIA (Estilo Gamer Premium)
+   ========================================================================== */
+
+.btn-category {
+    background: linear-gradient(135deg, #2e0050 0%, #4a0080 100%); /* Gradiente Roxo */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Redondo */
+    padding: 8px 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efeito de brilho interno ao passar o mouse */
+.btn-category::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--neon-green) 0%, #32e010 100%); /* Fica Verde */
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.btn-category:hover {
+    color: #000; /* Texto preto para contraste no verde */
+    transform: translateY(-3px); /* Sobe um pouco */
+    box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4); /* Sombra Neon */
+    border-color: transparent;
+}
+
+.btn-category:hover::before {
+    opacity: 1; /* Revela o fundo verde */
+}
+
+/* ================= ROBÔ GAMEMANIA ================= */
+
+.robo-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* MUDOU: Agora está na esquerda */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* MUDOU: Alinha itens à esquerda */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Balão de fala */
+.robo-balao {
+    background: #fff;
+    color: #000;
+    padding: 10px 15px;
+    /* MUDOU: A pontinha do balão agora fica na esquerda embaixo (0) */
+    border-radius: 15px 15px 15px 0; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aparecerBalao 0.5s forwards;
+    position: relative;
+    max-width: 200px;
+    text-align: left; /* Garante que o texto fique legível */
+}
+
+/* ... Mantenha o restante (.robo-fechar, .robo-avatar, keyframes) igual ao anterior ... */
+
+/* Botão de fechar o balão */
+.robo-fechar {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O Robô (Imagem) */
+.robo-avatar {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    /* Animação de flutuar */
+    animation: flutuar 3s ease-in-out infinite;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 0 5px var(--neon-green, #0f0)); /* Brilho Neon */
+}
+
+.robo-avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Animações Keyframes */
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes aparecerBalao {
+    to { opacity: 1; transform: translateY(0); }
+}
