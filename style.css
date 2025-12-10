@@ -111,20 +111,64 @@ hr {
 .text-muted-light { color: #b0b3c6; font-size: 0.75rem; display: block; line-height: 1; }
 
 /* ==========================================================================
-   ELEMENTOS DE PRODUTOS E LAYOUT
+   ELEMENTOS DE PRODUTOS E LAYOUT (ATUALIZADO PARA CORREÇÃO DE ESPAÇOS)
    ========================================================================== */
 
-/* Cards de Produto */
+/* Cards de Produto - Agora Flexíveis */
 .product-card { 
-    border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fff; padding: 15px; 
-    transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-    position: relative; overflow: hidden; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px; 
+    background-color: #fff; 
+    padding: 15px; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    position: relative; 
+    overflow: hidden;
+    /* Ajuste Flexbox para alinhar conteúdo e remover espaços em branco */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
 }
+
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-.product-img { height: 200px; object-fit: contain; width: 100%; margin-bottom: 10px; padding: 0; border-bottom: none; }
-.product-name { font-size: 1rem; font-weight: 500; color: #333; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Imagem com altura reduzida e fixa */
+.product-img { 
+    height: 180px; 
+    object-fit: contain; 
+    width: 100%; 
+    margin-bottom: 10px; 
+    padding: 0; 
+    border-bottom: none; 
+}
+
+/* Nome do produto com limite de 2 linhas */
+.product-name { 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    color: #333; 
+    margin-bottom: 8px; 
+    /* Lógica para cortar texto grande */
+    min-height: 42px;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+}
+
 .product-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
 .product-link:hover .product-name { color: var(--brand-purple); transition: color 0.3s ease; }
+
+/* Corpo do card para empurrar botão para baixo */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 !important;
+}
 
 /* Preços e Botões */
 .price-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px; }
@@ -626,4 +670,72 @@ hr {
 
 @keyframes aparecerBalao {
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PÁGINA DE CONSOLES E JOGOS
+   ========================================================================== */
+
+/* Cores de Fundo das Faixas de Marca */
+.banner-sony {
+    background: linear-gradient(90deg, #003087 0%, #000 100%);
+}
+
+.banner-xbox {
+    background: linear-gradient(90deg, #107C10 0%, #000 100%);
+}
+
+.banner-nintendo {
+    background: linear-gradient(90deg, #E60012 0%, #000 100%);
+}
+
+/* Botão "Ver Todos os Jogos" (Branco, dentro das faixas) */
+.btn-ver-jogos {
+    background-color: #fff;
+    color: #000;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid transparent;
+    white-space: nowrap; /* Evita quebra de linha em telas pequenas */
+    margin-top: 10px;    /* Espaçamento em telas menores */
+}
+
+/* Ajuste de margem para telas maiores (Desktop) */
+@media (min-width: 768px) {
+    .btn-ver-jogos {
+        margin-top: 0;
+    }
+}
+
+.btn-ver-jogos:hover {
+    transform: scale(1.05);
+    color: #000;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PÁGINA DE DIVERSOS
+   ========================================================================== */
+
+/* Gradiente Roxo/Azul para Funko */
+.banner-funko {
+    background: linear-gradient(90deg, #4b1248 0%, #000 100%);
+}
+
+/* Gradiente Laranja/Vermelho para Action Figures */
+.banner-action {
+    background: linear-gradient(90deg, #8a1c14 0%, #000 100%);
+}
+
+/* Gradiente Verde Tech para Gift Cards */
+.banner-gift {
+    background: linear-gradient(90deg, #0f5c2e 0%, #000 100%);
 }

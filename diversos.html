@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Diversos e Colecionáveis</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Diversos & Colecionáveis</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container-fluid p-0 mb-4 mt-4">
+            <div class="banner-perifericos banner-funko shadow d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="banner-img-container me-4 d-none d-md-flex">
+                        <img src="https://funko.com/on/demandware.static/-/Sites-funko-master-catalog/default/dwbb38a113/images/funko/65712-1.png" alt="Funko" class="banner-img" style="object-fit: contain;">
+                    </div>
+                    <div class="flex-grow-1 text-white py-3">
+                        <h2 class="m-0 banner-title mb-3">Funko Pop!</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-category">Marvel</a>
+                            <a href="#" class="btn btn-category">DC Comics</a>
+                            <a href="#" class="btn btn-category">Animes</a>
+                            <a href="#" class="btn btn-category">Games</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0 mb-4">
+            <div class="banner-perifericos banner-action shadow d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="banner-img-container me-4 d-none d-md-flex">
+                        <img src="https://m.media-amazon.com/images/I/61Kx3gZzHnL._AC_SL1500_.jpg" alt="Action Figure" class="banner-img" style="object-fit: contain;">
+                    </div>
+                    <div class="flex-grow-1 text-white py-3">
+                        <h2 class="m-0 banner-title mb-3">Action Figures</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-category">Bandai</a>
+                            <a href="#" class="btn btn-category">Iron Studios</a>
+                            <a href="#" class="btn btn-category">Hot Toys</a>
+                            <a href="#" class="btn btn-category">Estátuas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0 mb-5">
+            <div class="banner-perifericos banner-gift shadow d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="banner-img-container me-4 d-none d-md-flex">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Gift_Card.png" alt="Gift Cards" class="banner-img" style="object-fit: contain; filter: invert(1);">
+                    </div>
+                    <div class="flex-grow-1 text-white py-3">
+                        <h2 class="m-0 banner-title mb-3">Gift Cards</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-category">PlayStation Store</a>
+                            <a href="#" class="btn btn-category">Xbox Live</a>
+                            <a href="#" class="btn btn-category">Steam</a>
+                            <a href="#" class="btn btn-category">Nintendo eShop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            <div class="row g-4 pt-3"> 
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/61tC0bT1+EL._AC_SL1200_.jpg" class="product-img" alt="Funko Batman">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Funko Pop! Heroes: Batman 85th Anniversary</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 149,90</span>
+                                <span class="product-price-new">R$ 119,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 39,96</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/51w7gJvXbSL._AC_SL1000_.jpg" class="product-img" alt="Goku SH Figuarts">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Action Figure Goku Super Saiyan - S.H.Figuarts</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 399,90</span>
+                                <span class="product-price-new">R$ 349,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">6x</span> de <span class="installment-highlight">R$ 58,31</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/61Kx3gZzHnL._AC_SL1500_.jpg" class="product-img" alt="Gift Card PSN">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Gift Card PlayStation Store R$ 100</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-new">R$ 100,00</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-light">Envio Digital Imediato</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/51+m6+Xw+dL._AC_SL1000_.jpg" class="product-img" alt="Funko Naruto">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Funko Pop! Animation: Naruto Shippuden - Kakashi</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 139,90</span>
+                                <span class="product-price-new">R$ 109,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 36,63</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/71wYkC2v3AL._AC_SL1500_.jpg" class="product-img" alt="Kratos Figure">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Estátua Kratos & Atreus - God of War (Iron Studios)</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 1.299,00</span>
+                                <span class="product-price-new">R$ 999,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">10x</span> de <span class="installment-highlight">R$ 99,99</span> <span class="installment-light">sem juros</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/61Kx3gZzHnL._AC_SL1500_.jpg" class="product-img" alt="Gift Card Xbox">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Gift Card Xbox Game Pass Ultimate - 1 Mês</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-new">R$ 49,99</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-light">Envio Digital Imediato</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

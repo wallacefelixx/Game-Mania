@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mania - Todos os Jogos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cart-sidebar-container"></div>
+    <header id="header-target"></header>
+
+    <main class="mb-5">
+        
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Jogos</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container main-content-white mb-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-container mt-3">
+                        <button class="btn btn-filter active" onclick="filtrarJogos('todos', this)">TODOS</button>
+                        <button class="btn btn-filter" onclick="filtrarJogos('playstation', this)">PLAYSTATION</button>
+                        <button class="btn btn-filter" onclick="filtrarJogos('xbox', this)">XBOX</button>
+                        <button class="btn btn-filter" onclick="filtrarJogos('nintendo', this)">NINTENDO</button>
+                        <button class="btn btn-filter" onclick="filtrarJogos('pc', this)">PC</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 pt-3" id="grade-jogos"> 
+                
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="playstation">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/81qB80qHwDL._AC_SL1500_.jpg" class="product-img" alt="Spider-Man 2">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Marvel's Spider-Man 2 - PS5</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 349,90</span>
+                                <span class="product-price-new">R$ 299,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 59,98</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="nintendo">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/61fVzB09mDL._AC_SL1000_.jpg" class="product-img" alt="Zelda TotK">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">The Legend of Zelda: Tears of the Kingdom</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 399,90</span>
+                                <span class="product-price-new">R$ 329,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">6x</span> de <span class="installment-highlight">R$ 54,98</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="xbox">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/815T47-kSUL._AC_SL1500_.jpg" class="product-img" alt="Starfield">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Starfield - Xbox Series X</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 349,90</span>
+                                <span class="product-price-new">R$ 199,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 66,63</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="pc">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/81U8085+qmL._AC_SL1500_.jpg" class="product-img" alt="Cyberpunk 2077">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Cyberpunk 2077: Ultimate Edition - PC</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 299,90</span>
+                                <span class="product-price-new">R$ 159,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">3x</span> de <span class="installment-highlight">R$ 53,30</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="playstation">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/81362+uR8QL._AC_SL1500_.jpg" class="product-img" alt="God of War">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">God of War Ragnarök - PS5</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 349,90</span>
+                                <span class="product-price-new">R$ 249,90</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">4x</span> de <span class="installment-highlight">R$ 62,47</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 game-col" data-plataforma="nintendo">
+                    <div class="product-card card h-100">
+                        <a href="#" class="product-link">
+                            <img src="https://m.media-amazon.com/images/I/811Q7F8+TlL._AC_SL1500_.jpg" class="product-img" alt="Mario Kart">
+                        </a>
+                        <div class="card-body p-0 text-center">
+                            <a href="#" class="product-link">
+                                <h5 class="product-name">Mario Kart 8 Deluxe</h5>
+                            </a>
+                            <div class="price-container">
+                                <span class="product-price-old">R$ 299,00</span>
+                                <span class="product-price-new">R$ 279,00</span>
+                            </div>
+                            <p class="product-installments mb-2">
+                                <span class="installment-highlight">5x</span> de <span class="installment-highlight">R$ 55,80</span>
+                            </p>
+                            <button class="btn btn-comprar" onclick="adicionarAoCarrinho(this)">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+    <footer id="footer-target"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
